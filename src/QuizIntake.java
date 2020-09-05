@@ -22,6 +22,8 @@ public class QuizIntake extends JFrame{
     private JCheckBox Sack;
     private JCheckBox Fumble;
     private JCheckBox Interception;
+
+    //comparing values
     private byte play_type;
     private byte yardage;
     private boolean td;
@@ -42,6 +44,7 @@ public class QuizIntake extends JFrame{
         intercept = false;
         safe = false;
         sk = false;
+        PlayType pt = new PlayType(play_type,yardage,td,sk,intercept,fum,safe);
 
         //playtype
         Run.addActionListener(new ActionListener() {
@@ -49,8 +52,8 @@ public class QuizIntake extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Color c = new Color(60,0,0);
                 Color resetbkg = new Color(62,62,62);
-                play_type = 0;
-                System.out.println("play type: " + play_type);
+                pt.setPlayType((byte)(0));
+                System.out.println("play type: " + pt.getPlayType());
                 Run.setBackground(c);
                 Pass.setBackground(resetbkg);
                 Kick_Punt.setBackground(resetbkg);
@@ -61,8 +64,8 @@ public class QuizIntake extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Color c = new Color(60,0,0);
                 Color resetbkg = new Color(62,62,62);
-                play_type = 1;
-                System.out.println("play type: " + play_type);
+                pt.setPlayType((byte)(1));
+                System.out.println("play type: " + pt.getPlayType());
                 Run.setBackground(resetbkg);
                 Pass.setBackground(c);
                 Kick_Punt.setBackground(resetbkg);
@@ -73,10 +76,10 @@ public class QuizIntake extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Color c = new Color(60,0,0);
                 Color resetbkg = new Color(62,62,62);
-                play_type = 2;
-                yardage = 8;
-                System.out.println("play type: " + play_type);
-                System.out.println("yardage: " + yardage);
+                pt.setPlayType((byte)(2));
+                pt.setYardage((byte)(8));
+                System.out.println("play type: " + pt.getPlayType());
+                System.out.println("yardage: " + pt.getYardage());
                 Run.setBackground(resetbkg);
                 Pass.setBackground(resetbkg);
                 Kick_Punt.setBackground(c);
@@ -96,8 +99,8 @@ public class QuizIntake extends JFrame{
                 if(play_type != 2) {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
-                    yardage = 0;
-                    System.out.println("yardage: " + yardage);
+                    pt.setYardage((byte)(0));
+                    System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(c);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(resetbkg);
@@ -113,8 +116,8 @@ public class QuizIntake extends JFrame{
                 if(play_type != 2) {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
-                    yardage = 1;
-                    System.out.println("yardage: " + yardage);
+                    pt.setYardage((byte)(1));
+                    System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(c);
                     ten_twentyfive.setBackground(resetbkg);
@@ -130,8 +133,8 @@ public class QuizIntake extends JFrame{
                 if(play_type != 2) {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
-                    yardage = 2;
-                    System.out.println("yardage: " + yardage);
+                    pt.setYardage((byte)(2));
+                    System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(c);
@@ -147,8 +150,8 @@ public class QuizIntake extends JFrame{
                 if(play_type != 2) {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
-                    yardage = 3;
-                    System.out.println("yardage: " + yardage);
+                    pt.setYardage((byte)(3));
+                    System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(resetbkg);
@@ -164,8 +167,8 @@ public class QuizIntake extends JFrame{
                 if(play_type != 2) {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
-                    yardage = 4;
-                    System.out.println("yardage: " + yardage);
+                    pt.setYardage((byte)(4));
+                    System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(resetbkg);
@@ -181,8 +184,8 @@ public class QuizIntake extends JFrame{
                 if(play_type != 2) {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
-                    yardage = 5;
-                    System.out.println("yardage: " + yardage);
+                    pt.setYardage((byte)(5));
+                    System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(resetbkg);
@@ -198,66 +201,66 @@ public class QuizIntake extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(Touchdown.isSelected()){
-                    td = true;
+                    pt.setTouchdown(true);
                 }
                 if(!Touchdown.isSelected()){
-                    td = false;
+                    pt.setTouchdown(false);
                 }
-                System.out.println("predicted touchdown: " + td);
+                System.out.println("predicted touchdown: " + pt.isTouchdown());
             }
         });
         Fumble.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(Fumble.isSelected()){
-                    fum = true;
+                    pt.setFumble(true);
                 }
                 if(!Fumble.isSelected()){
-                    fum = false;
+                    pt.setFumble(false);
                 }
-                System.out.println("predicted fumble: " + fum);
+                System.out.println("predicted fumble: " + pt.isFumble());
             }
         });
         Interception.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(Interception.isSelected()){
-                    intercept = true;
+                    pt.setInterception(true);
                 }
                 if(!Interception.isSelected()){
-                    intercept = false;
+                    pt.setInterception(false);
                 }
-                System.out.println("predicted interception: " + intercept);
+                System.out.println("predicted interception: " + pt.isInterception());
             }
         });
         Safety.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(Safety.isSelected()){
-                    safe = true;
+                    pt.setSaftey(true);
                 }
                 if(!Safety.isSelected()){
-                    safe = false;
+                    pt.setSaftey(false);
                 }
-                System.out.println("predicted safety: " + safe);
+                System.out.println("predicted safety: " + pt.isSaftey());
             }
         });
         Sack.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(Sack.isSelected()){
-                    sk = true;
+                    pt.setSack(true);
                 }
                 if(!Sack.isSelected()){
-                    sk = false;
+                    pt.setSack(false);
                 }
-                System.out.println("predicted sack: " + sk);
+                System.out.println("predicted sack: " + pt.isSack());
             }
         });
     }
 
     public static void main(String[] args){
-        JFrame frame = new QuizIntake("My QuizIntake");
+        JFrame frame = new QuizIntake("Virtual 12th Man");
         frame.setVisible(true);
     }
 
