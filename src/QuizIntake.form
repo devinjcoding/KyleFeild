@@ -135,8 +135,8 @@
               <background color="-12698050"/>
               <font name="MV Boli" size="16"/>
               <foreground color="-1"/>
-              <label value="25-40 Yards"/>
-              <text value="25-40 Yards"/>
+              <label value="26-40 Yards"/>
+              <text value="26-40 Yards"/>
             </properties>
           </component>
           <component id="48590" class="javax.swing.JButton" binding="forty_sixty">
@@ -147,8 +147,8 @@
               <background color="-12698050"/>
               <font name="MV Boli" size="16"/>
               <foreground color="-1"/>
-              <label value="40-60 Yards"/>
-              <text value="40-60 Yards"/>
+              <label value="41-60 Yards"/>
+              <text value="41-60 Yards"/>
             </properties>
           </component>
           <component id="6f256" class="javax.swing.JButton" binding="ten_twentyfive">
@@ -159,8 +159,8 @@
               <background color="-12698050"/>
               <font name="MV Boli" size="16"/>
               <foreground color="-1"/>
-              <label value="10-25 Yards"/>
-              <text value="10-25 Yards"/>
+              <label value="11-25 Yards"/>
+              <text value="11-25 Yards"/>
             </properties>
           </component>
           <component id="3f1ac" class="javax.swing.JButton" binding="zero_ten">
@@ -183,8 +183,8 @@
               <background color="-12698050"/>
               <font name="MV Boli" size="16"/>
               <foreground color="-1"/>
-              <label value="60+ Yards"/>
-              <text value="60+ Yards"/>
+              <label value="61+ Yards"/>
+              <text value="61+ Yards"/>
             </properties>
           </component>
         </children>

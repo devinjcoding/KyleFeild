@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class GameMasterGUI extends JFrame {
     private JPanel mainPanel;
-    private JButton Penalty;
+    private JButton Close_Poll;
     private JLabel Special;
     private JPanel Special_Event;
     private JPanel YardageLabel;
@@ -26,7 +26,8 @@ public class GameMasterGUI extends JFrame {
     private JButton Kick_Punt;
     private JButton Pass;
     private JButton Run;
-    private JButton submitButton;
+    private JButton Submit;
+    private JButton Penalty;
 
     private byte play_type;
     private byte yardage;
