@@ -1,6 +1,6 @@
 public class Test {
     public static void main(String[] args) {
-        PlayType test = new PlayType();
+        /*PlayType test = new PlayType();
         PlayType test1 = new PlayType((byte)(0),(byte)(0),(byte)(0));
         System.out.println(test);
         System.out.println(test1);
@@ -10,6 +10,9 @@ public class Test {
         System.out.println(test1);
         System.out.println(test1.getPlayType());
         System.out.println(test1.getSpecial());
-        System.out.println(test1.getYardage());
+        System.out.println(test1.getYardage());*/
+        QuizIntake qi = new QuizIntake("Quiz");
+        while(true)
+            System.out.println(qi.getRun());
     }
 }
