@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GameMasteGUI extends JFrame {
+public class GameMasterGUI extends JFrame {
     private JPanel mainPanel;
     private JButton Penalty;
     private JLabel Special;
@@ -36,7 +36,7 @@ public class GameMasteGUI extends JFrame {
     private boolean safe;
     private boolean sk;
 
-    public GameMasteGUI(String title) {
+    public GameMasterGUI(String title) {
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
@@ -264,7 +264,7 @@ public class GameMasteGUI extends JFrame {
         });
     }
     public static void main(String[] args){
-        JFrame frame = new GameMasteGUI("Game Master");
+        JFrame frame = new GameMasterGUI("Game Master");
         frame.setVisible(true);
     }
 }
