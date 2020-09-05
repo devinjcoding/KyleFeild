@@ -23,28 +23,17 @@ public class QuizIntake extends JFrame{
     private JCheckBox Fumble;
     private JCheckBox Interception;
 
-    //comparing values
-    private byte play_type;
-    private byte yardage;
-    private boolean td;
-    private boolean fum;
-    private boolean intercept;
-    private boolean safe;
-    private boolean sk;
+    private boolean playStarted;
 
     public QuizIntake(String title){
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
-        play_type = 8;
-        yardage = 8;
-        td = false;
-        fum = false;
-        intercept = false;
-        safe = false;
-        sk = false;
-        PlayType pt = new PlayType(play_type,yardage,td,sk,intercept,fum,safe);
+        PlayType pt = new PlayType();
+
+
+
 
         //playtype
         Run.addActionListener(new ActionListener() {
