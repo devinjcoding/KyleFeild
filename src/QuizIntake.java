@@ -22,6 +22,7 @@ public class QuizIntake extends JFrame{
     private JCheckBox Sack;
     private JCheckBox Fumble;
     private JCheckBox Interception;
+    public PlayType pt;
 
 
     private boolean playStarted;
@@ -32,7 +33,7 @@ public class QuizIntake extends JFrame{
         this.setContentPane(mainPanel);
         this.pack();
         playStarted=playStart;
-        PlayType pt = new PlayType();
+        pt = new PlayType();
 
 
 
