@@ -31,6 +31,8 @@ public class GameMasterGUI extends JFrame {
     private JLabel Yards_to_Go;
     private JButton Close_Poll;
 
+    PlayType pt;
+
     private byte play_type;
     private byte yardage;
     private boolean td;
@@ -52,7 +54,7 @@ public class GameMasterGUI extends JFrame {
         intercept = false;
         safe = false;
         sk = false;
-        PlayType pt = new PlayType(play_type, yardage,td,sk,intercept,fum,safe);
+        pt = new PlayType(play_type, yardage,td,sk,intercept,fum,safe);
 
         Run.setEnabled(false);
         Pass.setEnabled(false);
@@ -337,5 +339,9 @@ public class GameMasterGUI extends JFrame {
     public static void main(String[] args){
         JFrame frame = new GameMasterGUI("Game Master");
         frame.setVisible(true);
+    }
+
+    public String getPlayInfo(){
+        return pt.toString() + (int)((Double.parseDouble(yardsToGo.getText())));
     }
 }
