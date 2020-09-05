@@ -258,12 +258,6 @@ public class QuizIntake extends JFrame{
             }
         });
     }
-
-    public static void main(String[] args){
-        JFrame frame = new QuizIntake("Virtual 12th Man");
-        frame.setVisible(true);
-    }
-
     public Boolean getRun() {
         return getRun().booleanValue();
     }

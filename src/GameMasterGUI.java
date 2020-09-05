@@ -350,7 +350,7 @@ public class GameMasterGUI extends JFrame {
         frame.setVisible(true);
     }*/
     private void updateScore(Map<Integer, PlayType> playerLog){
-        for(Integer i : playerLog.keySet()){
+        for(Integer i: playerLog.keySet()){
             byte userPlay;
             byte userYard;
             boolean userTouchdown;
