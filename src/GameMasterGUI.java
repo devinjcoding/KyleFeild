@@ -72,11 +72,15 @@ public class GameMasterGUI extends JFrame {
         Kick_Punt.setEnabled(false);
         Pass.setEnabled(false);
         Run.setEnabled(false);
+        yardsToGo.setEnabled(true);
 
         Close_Poll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int ytg = (int)((Double.parseDouble(yardsToGo.getText())));
+                /*if(yardsToGo.getText().length()<=0){
+
+                }*/
+                int ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
                 if(ytg > 0 && ytg < 100){
                     Run.setEnabled(true);
                     Pass.setEnabled(true);
@@ -94,6 +98,7 @@ public class GameMasterGUI extends JFrame {
                     Kick_Punt.setEnabled(true);
                     Pass.setEnabled(true);
                     Run.setEnabled(true);
+                    yardsToGo.setEnabled(false);
                 }
             }
         });
@@ -101,6 +106,7 @@ public class GameMasterGUI extends JFrame {
         Submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                getPlayInfo();
                 Run.setEnabled(false);
                 Pass.setEnabled(false);
                 Sack.setEnabled(false);
@@ -117,7 +123,8 @@ public class GameMasterGUI extends JFrame {
                 Kick_Punt.setEnabled(false);
                 Pass.setEnabled(false);
                 Run.setEnabled(false);
-                
+                yardsToGo.setText("");
+                yardsToGo.setEnabled(true);
 
             }
         });
