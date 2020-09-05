@@ -12,6 +12,9 @@ public class main {
         JFrame frame = new GameMasterGUI("Game Master", pLog);
         frame.setVisible(true);
         user1Quiz.setVisible(true);
+        while(1==1){
+            QuizIntake user1Quiz = new QuizIntake("Virtual 12th Man");
+        }
         //TODO score all user class to GM
         //TODO award points to USER
         //TODO Rank USERS
