@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.util.Map;
 
 public class GameMasterGUI extends JFrame {
     private JPanel mainPanel;
@@ -31,16 +31,14 @@ public class GameMasterGUI extends JFrame {
     private JButton Penalty;
     private JLabel Yards_to_Go;
     private JButton Close_Poll;
-    private ArrayList<QuizIntake> UserList;
 
     PlayType pt;
 
-    public GameMasterGUI(String title, ArrayList<QuizIntake> userList) {
+    public GameMasterGUI(String title, Map<Integer, PlayType> pLog) {
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
-        UserList=userList;
         pt = new PlayType();
 
         Run.setEnabled(false);
@@ -113,7 +111,7 @@ public class GameMasterGUI extends JFrame {
                 Run.setEnabled(false);
                 yardsToGo.setText("");
                 yardsToGo.setEnabled(true);
-                updateScore(UserList);
+                updateScore(pLog);
                 pt = new PlayType();
                 Run.setBackground(c);
                 Pass.setBackground(c);
@@ -347,14 +345,29 @@ public class GameMasterGUI extends JFrame {
             }
         });
     }
-    public static void main(String[] args){
-        JFrame frame = new GameMasterGUI("Game Master", new ArrayList<QuizIntake>());
+    /*public static void main(String[] args){
+        JFrame frame = new GameMasterGUI("Game Master", Map<Integer, PlayType>());
         frame.setVisible(true);
-    }
-    private void updateScore(ArrayList<QuizIntake> uL){
-        for(QuizIntake i : uL){
+    }*/
+    private void updateScore(Map<Integer, PlayType> playerLog){
+        for(Integer i : playerLog.keySet()){
+            byte userPlay;
+            byte userYard;
+            boolean userTouchdown;
+            boolean userFumble;
+            boolean userSack;
+            boolean userSafety;
+            boolean userInterception;
+            userPlay = playerLog.get(i).getPlayType();
+            userYard = playerLog.get(i).getYardage();
+            userTouchdown = playerLog.get(i).isTouchdown();
+            userFumble = playerLog.get(i).isFumble();
+            userSack = playerLog.get(i).isSack();
+            userSafety = playerLog.get(i).isSaftey();
+            userInterception = playerLog.get(i).isInterception();
             //compare to GM play book
             //update user score
+
         }
     }
     public String getPlayInfo(){
