@@ -25,11 +25,12 @@ public class QuizIntake extends JFrame{
 
     private boolean playStarted;
 
-    public QuizIntake(String title){
+    public QuizIntake(String title, boolean playStart){
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
+        playStarted=playStart;
         PlayType pt = new PlayType();
 
 
