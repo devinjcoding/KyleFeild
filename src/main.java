@@ -10,4 +10,8 @@ public class main {
         //TODO award points to USER
         //TODO Rank USERS
     }
+
+    public int score(){
+        return 1;
+    }
 }

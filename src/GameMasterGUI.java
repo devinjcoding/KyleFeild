@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 public class GameMasterGUI extends JFrame {
     private JPanel mainPanel;
-    private JButton Close_Poll;
     private JLabel Special;
     private JPanel Special_Event;
     private JPanel YardageLabel;
@@ -27,7 +26,10 @@ public class GameMasterGUI extends JFrame {
     private JButton Pass;
     private JButton Run;
     private JButton Submit;
+    private JTextField yardsToGo;
     private JButton Penalty;
+    private JLabel Yards_to_Go;
+    private JButton Close_Poll;
 
     private byte play_type;
     private byte yardage;
@@ -51,6 +53,74 @@ public class GameMasterGUI extends JFrame {
         safe = false;
         sk = false;
         PlayType pt = new PlayType(play_type, yardage,td,sk,intercept,fum,safe);
+
+        Run.setEnabled(false);
+        Pass.setEnabled(false);
+        Sack.setEnabled(false);
+        Safety.setEnabled(false);
+        Interception.setEnabled(false);
+        Fumble.setEnabled(false);
+        Touchdown.setEnabled(false);
+        sixty.setEnabled(false);
+        forty_sixty.setEnabled(false);
+        twentyfive_forty.setEnabled(false);
+        zero_ten.setEnabled(false);
+        ten_twentyfive.setEnabled(false);
+        negative.setEnabled(false);
+        Kick_Punt.setEnabled(false);
+        Pass.setEnabled(false);
+        Run.setEnabled(false);
+
+        Close_Poll.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int ytg = (int)((Double.parseDouble(yardsToGo.getText())));
+                if(ytg > 0 && ytg < 100){
+                    Run.setEnabled(true);
+                    Pass.setEnabled(true);
+                    Sack.setEnabled(true);
+                    Safety.setEnabled(true);
+                    Interception.setEnabled(true);
+                    Fumble.setEnabled(true);
+                    Touchdown.setEnabled(true);
+                    sixty.setEnabled(true);
+                    forty_sixty.setEnabled(true);
+                    twentyfive_forty.setEnabled(true);
+                    zero_ten.setEnabled(true);
+                    ten_twentyfive.setEnabled(true);
+                    negative.setEnabled(true);
+                    Kick_Punt.setEnabled(true);
+                    Pass.setEnabled(true);
+                    Run.setEnabled(true);
+                }
+            }
+        });
+
+        Submit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Run.setEnabled(false);
+                Pass.setEnabled(false);
+                Sack.setEnabled(false);
+                Safety.setEnabled(false);
+                Interception.setEnabled(false);
+                Fumble.setEnabled(false);
+                Touchdown.setEnabled(false);
+                sixty.setEnabled(false);
+                forty_sixty.setEnabled(false);
+                twentyfive_forty.setEnabled(false);
+                zero_ten.setEnabled(false);
+                ten_twentyfive.setEnabled(false);
+                negative.setEnabled(false);
+                Kick_Punt.setEnabled(false);
+                Pass.setEnabled(false);
+                Run.setEnabled(false);
+                
+
+            }
+        });
+
+
 
         //play type
         Run.addActionListener(new ActionListener() {
