@@ -3,27 +3,31 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class QuizIntake extends JFrame{
+public class GameMasteGUI extends JFrame {
     private JPanel mainPanel;
+    private JButton Penalty;
+    private JLabel Special;
     private JPanel Special_Event;
-    private JPanel Yardage;
+    private JPanel YardageLabel;
     private JPanel Play_Type;
-    private JButton Run;
+    private JLabel Yardage;
+    private JLabel Play_type;
+    private JCheckBox Sack;
+    private JCheckBox Safety;
+    private JCheckBox Interception;
+    private JCheckBox Fumble;
+    private JCheckBox Touchdown;
+    private JButton sixty;
+    private JButton forty_sixty;
+    private JButton twentyfive_forty;
+    private JButton zero_ten;
+    private JButton ten_twentyfive;
+    private JButton negative;
     private JButton Kick_Punt;
     private JButton Pass;
-    private JButton negative;
-    private JButton twentyfive_forty;
-    private JButton forty_sixty;
-    private JButton ten_twentyfive;
-    private JButton zero_ten;
-    private JButton sixty;
-    private JCheckBox Touchdown;
-    private JCheckBox Safety;
-    private JCheckBox Sack;
-    private JCheckBox Fumble;
-    private JCheckBox Interception;
+    private JButton Run;
+    private JButton submitButton;
 
-    //comparing values
     private byte play_type;
     private byte yardage;
     private boolean td;
@@ -32,11 +36,12 @@ public class QuizIntake extends JFrame{
     private boolean safe;
     private boolean sk;
 
-    public QuizIntake(String title){
+    public GameMasteGUI(String title) {
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
+
         play_type = 8;
         yardage = 8;
         td = false;
@@ -44,9 +49,9 @@ public class QuizIntake extends JFrame{
         intercept = false;
         safe = false;
         sk = false;
-        PlayType pt = new PlayType(play_type,yardage,td,sk,intercept,fum,safe);
+        PlayType pt = new PlayType(play_type, yardage,td,sk,intercept,fum,safe);
 
-        //playtype
+        //play type
         Run.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -89,6 +94,68 @@ public class QuizIntake extends JFrame{
                 twentyfive_forty.setBackground(resetbkg);
                 forty_sixty.setBackground(resetbkg);
                 sixty.setBackground(resetbkg);
+            }
+        });
+
+        //special event
+        Touchdown.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Touchdown.isSelected()){
+                    pt.setTouchdown(true);
+                }
+                if(!Touchdown.isSelected()){
+                    pt.setTouchdown(false);
+                }
+                System.out.println("touchdown: " + pt.isTouchdown());
+            }
+        });
+        Fumble.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Fumble.isSelected()){
+                    pt.setFumble(true);
+                }
+                if(!Fumble.isSelected()){
+                    pt.setFumble(false);
+                }
+                System.out.println("fumble: " + pt.isFumble());
+            }
+        });
+        Interception.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Interception.isSelected()){
+                    pt.setInterception(true);
+                }
+                if(!Interception.isSelected()){
+                    pt.setInterception(false);
+                }
+                System.out.println("interception: " + pt.isInterception());
+            }
+        });
+        Safety.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Safety.isSelected()){
+                    pt.setSaftey(true);
+                }
+                if(!Safety.isSelected()){
+                    pt.setSaftey(false);
+                }
+                System.out.println("safety: " + pt.isSaftey());
+            }
+        });
+        Sack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Sack.isSelected()){
+                    pt.setSack(true);
+                }
+                if(!Sack.isSelected()){
+                    pt.setSack(false);
+                }
+                System.out.println("sack: " + pt.isSack());
             }
         });
 
@@ -195,76 +262,9 @@ public class QuizIntake extends JFrame{
                 }
             }
         });
-
-        //special events
-        Touchdown.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Touchdown.isSelected()){
-                    pt.setTouchdown(true);
-                }
-                if(!Touchdown.isSelected()){
-                    pt.setTouchdown(false);
-                }
-                System.out.println("predicted touchdown: " + pt.isTouchdown());
-            }
-        });
-        Fumble.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Fumble.isSelected()){
-                    pt.setFumble(true);
-                }
-                if(!Fumble.isSelected()){
-                    pt.setFumble(false);
-                }
-                System.out.println("predicted fumble: " + pt.isFumble());
-            }
-        });
-        Interception.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Interception.isSelected()){
-                    pt.setInterception(true);
-                }
-                if(!Interception.isSelected()){
-                    pt.setInterception(false);
-                }
-                System.out.println("predicted interception: " + pt.isInterception());
-            }
-        });
-        Safety.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Safety.isSelected()){
-                    pt.setSaftey(true);
-                }
-                if(!Safety.isSelected()){
-                    pt.setSaftey(false);
-                }
-                System.out.println("predicted safety: " + pt.isSaftey());
-            }
-        });
-        Sack.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Sack.isSelected()){
-                    pt.setSack(true);
-                }
-                if(!Sack.isSelected()){
-                    pt.setSack(false);
-                }
-                System.out.println("predicted sack: " + pt.isSack());
-            }
-        });
     }
-
     public static void main(String[] args){
-        JFrame frame = new QuizIntake("Virtual 12th Man");
+        JFrame frame = new GameMasteGUI("Game Master");
         frame.setVisible(true);
-    }
-
-    public Boolean getRun() {
-        return getRun().booleanValue();
     }
 }
