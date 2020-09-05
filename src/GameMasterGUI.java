@@ -31,6 +31,7 @@ public class GameMasterGUI extends JFrame {
     private JButton Penalty;
     private JLabel Yards_to_Go;
     private JButton Close_Poll;
+    private boolean playStarted;
 
     PlayType pt;
 
@@ -65,6 +66,7 @@ public class GameMasterGUI extends JFrame {
                 /*if(yardsToGo.getText().length()<=0){
 
                 }*/
+                playStarted = true;
                 int ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
                 if(ytg > 0 && ytg < 100){
                     Run.setEnabled(true);
@@ -91,6 +93,7 @@ public class GameMasterGUI extends JFrame {
         Submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 Color c = new Color(62,62,62);
                 getPlayInfo();
                 Run.setEnabled(false);
@@ -127,6 +130,7 @@ public class GameMasterGUI extends JFrame {
                 Safety.setSelected(false);
                 Interception.setSelected(false);
                 Sack.setSelected(false);
+                playStarted = false;
 
             }
         });
@@ -349,6 +353,9 @@ public class GameMasterGUI extends JFrame {
         JFrame frame = new GameMasterGUI("Game Master", Map<Integer, PlayType>());
         frame.setVisible(true);
     }*/
+    public boolean isPlayStarted(){
+        return playStarted;
+    }
     private void updateScore(Map<Integer, PlayType> playerLog){
         for(Integer i: playerLog.keySet()){
             byte userPlay;
