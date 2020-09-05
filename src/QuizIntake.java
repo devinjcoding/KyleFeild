@@ -23,6 +23,7 @@ public class QuizIntake extends JFrame{
     private JCheckBox Fumble;
     private JCheckBox Interception;
 
+
     private boolean playStarted;
 
     public QuizIntake(String title, boolean playStart){
@@ -247,6 +248,15 @@ public class QuizIntake extends JFrame{
                 System.out.println("predicted sack: " + pt.isSack());
             }
         });
+    }
+    public void setPlayStarted(boolean ps){
+        playStarted = ps;
+    }
+    public boolean isPlayStart(){
+        return playStarted;
+    }
+    public PlayType getPlayType(){
+        return new PlayType();
     }
     public Boolean getRun() {
         return getRun().booleanValue();
