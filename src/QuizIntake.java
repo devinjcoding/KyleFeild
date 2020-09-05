@@ -5,15 +5,20 @@ public class QuizIntake extends JFrame{
     private JPanel Special_Event;
     private JPanel Yardage;
     private JPanel Play_Type;
-    private JCheckBox Kick_Punt;
-    private JCheckBox Pass;
-    private JCheckBox Run;
-    private JCheckBox negative_zero;
-    private JCheckBox twentyfive_thirtyfive;
-    private JCheckBox thirtyfive_fifty;
-    private JCheckBox zero_ten;
-    private JCheckBox fifty;
-    private JCheckBox ten_twentyfive;
+    private JButton Run;
+    private JButton Kick_Punt;
+    private JButton Pass;
+    private JButton negative;
+    private JButton twentyfive_forty;
+    private JButton forty_sixty;
+    private JButton ten_twentyfive;
+    private JButton zero_ten;
+    private JButton sixty;
+    private JCheckBox Touchdown;
+    private JCheckBox Safety;
+    private JCheckBox Sack;
+    private JCheckBox Fumble;
+    private JCheckBox Interception;
 
     public QuizIntake(String title){
         super(title);
