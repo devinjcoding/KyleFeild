@@ -1,17 +1,21 @@
 public class PlayType {
     byte playType;
     byte yardage;
-    byte special;
+    boolean touchdown,sack,interception, fumble, saftey;
     public PlayType(){
         playType = 8;
         yardage = 8;
-        special = 8;
+        touchdown = sack = interception = fumble = saftey = false;
     }
 
-    public PlayType(byte pT, byte yard, byte spec){
+    public PlayType(byte pT, byte yard, boolean td, boolean s, boolean i, boolean f, boolean sa){
         playType = pT;
         yardage = yard;
-        special = spec;
+        touchdown = td;
+        sack = s;
+        interception = i;
+        fumble = f;
+        saftey = sa;
     }
 
     public void setPlayType(byte playType) {
@@ -30,20 +34,48 @@ public class PlayType {
         this.yardage = yardage;
     }
 
-    public void setSpecial(byte special) {
-        this.special = special;
+    public boolean isFumble() {
+        return fumble;
     }
 
-    public byte getSpecial() {
-        return special;
+    public boolean isInterception() {
+        return interception;
+    }
+
+    public boolean isSack() {
+        return sack;
+    }
+
+    public boolean isSaftey() {
+        return saftey;
+    }
+
+    public boolean isTouchdown() {
+        return touchdown;
+    }
+
+    public void setFumble(boolean fumble) {
+        this.fumble = fumble;
+    }
+
+    public void setInterception(boolean interception) {
+        this.interception = interception;
+    }
+
+    public void setSack(boolean sack) {
+        this.sack = sack;
+    }
+
+    public void setSaftey(boolean saftey) {
+        this.saftey = saftey;
+    }
+
+    public void setTouchdown(boolean touchdown) {
+        this.touchdown = touchdown;
     }
 
     @Override
     public String toString() {
-        return "PlayType{" +
-                "playType=" + playType +
-                ", yardage=" + yardage +
-                ", special=" + special +
-                '}';
+        return playType + " " + yardage + " " + touchdown + " " + interception + " " + fumble + " " + sack + " "+ saftey;
     }
 }
