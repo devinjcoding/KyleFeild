@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class main {
     public static void main(String[] args) throws FileNotFoundException {
-        GameMasterGUI gM = new GameMasterGUI("Game Master");
+        //GameMasterGUI gM = new GameMasterGUI("Game Master");
         //TODO add new user class
         QuizIntake user1 = new QuizIntake("Virtual 12th Man");
         //TODO score all user class to GM
@@ -12,7 +12,5 @@ public class main {
         //TODO Rank USERS
     }
 
-    public int score(GameMasterGUI, ArrayList<QuizIntake>){
-        return 1;
-    }
+
 }

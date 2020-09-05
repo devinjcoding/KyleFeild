@@ -35,29 +35,13 @@ public class GameMasterGUI extends JFrame {
 
     PlayType pt;
 
-    private byte play_type;
-    private byte yardage;
-    private boolean td;
-    private boolean fum;
-    private boolean intercept;
-    private boolean safe;
-    private boolean sk;
-
     public GameMasterGUI(String title, ArrayList<QuizIntake> userList) {
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
         UserList=userList;
-
-        play_type = 8;
-        yardage = 8;
-        td = false;
-        fum = false;
-        intercept = false;
-        safe = false;
-        sk = false;
-        pt = new PlayType(play_type, yardage,td,sk,intercept,fum,safe);
+        pt = new PlayType();
 
         Run.setEnabled(false);
         Pass.setEnabled(false);
@@ -109,6 +93,7 @@ public class GameMasterGUI extends JFrame {
         Submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Color c = new Color(62,62,62);
                 getPlayInfo();
                 Run.setEnabled(false);
                 Pass.setEnabled(false);
@@ -128,6 +113,22 @@ public class GameMasterGUI extends JFrame {
                 Run.setEnabled(false);
                 yardsToGo.setText("");
                 yardsToGo.setEnabled(true);
+                updateScore(UserList);
+                pt = new PlayType();
+                Run.setBackground(c);
+                Pass.setBackground(c);
+                Kick_Punt.setBackground(c);
+                negative.setBackground(c);
+                zero_ten.setBackground(c);
+                ten_twentyfive.setBackground(c);
+                twentyfive_forty.setBackground(c);
+                forty_sixty.setBackground(c);
+                sixty.setBackground(c);
+                Touchdown.setSelected(false);
+                Fumble.setSelected(false);
+                Safety.setSelected(false);
+                Interception.setSelected(false);
+                Sack.setSelected(false);
 
             }
         });
@@ -347,8 +348,8 @@ public class GameMasterGUI extends JFrame {
         });
     }
     public static void main(String[] args){
-        //JFrame frame = new GameMasterGUI("Game Master");
-        //frame.setVisible(true);
+        JFrame frame = new GameMasterGUI("Game Master", new ArrayList<QuizIntake>());
+        frame.setVisible(true);
     }
     private void updateScore(ArrayList<QuizIntake> uL){
         for(QuizIntake i : uL){
