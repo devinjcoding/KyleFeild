@@ -24,6 +24,11 @@ public class QuizIntake extends JFrame{
     private JCheckBox Interception;
     private byte play_type;
     private byte yardage;
+    private boolean td;
+    private boolean fum;
+    private boolean intercept;
+    private boolean safe;
+    private boolean sk;
 
     public QuizIntake(String title){
         super(title);
@@ -32,6 +37,11 @@ public class QuizIntake extends JFrame{
         this.pack();
         play_type = 8;
         yardage = 8;
+        td = false;
+        fum = false;
+        intercept = false;
+        safe = false;
+        sk = false;
 
         //playtype
         Run.addActionListener(new ActionListener() {
@@ -180,6 +190,68 @@ public class QuizIntake extends JFrame{
                     forty_sixty.setBackground(resetbkg);
                     sixty.setBackground(c);
                 }
+            }
+        });
+
+        //special events
+        Touchdown.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Touchdown.isSelected()){
+                    td = true;
+                }
+                if(!Touchdown.isSelected()){
+                    td = false;
+                }
+                System.out.println("predicted touchdown: " + td);
+            }
+        });
+        Fumble.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Fumble.isSelected()){
+                    fum = true;
+                }
+                if(!Fumble.isSelected()){
+                    fum = false;
+                }
+                System.out.println("predicted fumble: " + fum);
+            }
+        });
+        Interception.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Interception.isSelected()){
+                    intercept = true;
+                }
+                if(!Interception.isSelected()){
+                    intercept = false;
+                }
+                System.out.println("predicted interception: " + intercept);
+            }
+        });
+        Safety.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Safety.isSelected()){
+                    safe = true;
+                }
+                if(!Safety.isSelected()){
+                    safe = false;
+                }
+                System.out.println("predicted safety: " + safe);
+            }
+        });
+        Sack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Sack.isSelected()){
+                    sk = true;
+                }
+                if(!Sack.isSelected()){
+                    sk = false;
+                }
+                System.out.println("predicted sack: " + sk);
             }
         });
     }
