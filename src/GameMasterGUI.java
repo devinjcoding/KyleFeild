@@ -2,51 +2,140 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-public class QuizIntake extends JFrame{
+public class GameMasterGUI extends JFrame {
     private JPanel mainPanel;
+    private JLabel Special;
     private JPanel Special_Event;
-    private JPanel Yardage;
+    private JPanel YardageLabel;
     private JPanel Play_Type;
-    private JButton Run;
+    private JLabel Yardage;
+    private JLabel Play_type;
+    private JCheckBox Sack;
+    private JCheckBox Safety;
+    private JCheckBox Interception;
+    private JCheckBox Fumble;
+    private JCheckBox Touchdown;
+    private JButton sixty;
+    private JButton forty_sixty;
+    private JButton twentyfive_forty;
+    private JButton zero_ten;
+    private JButton ten_twentyfive;
+    private JButton negative;
     private JButton Kick_Punt;
     private JButton Pass;
-    private JButton negative;
-    private JButton twentyfive_forty;
-    private JButton forty_sixty;
-    private JButton ten_twentyfive;
-    private JButton zero_ten;
-    private JButton sixty;
-    private JCheckBox Touchdown;
-    private JCheckBox Safety;
-    private JCheckBox Sack;
-    private JCheckBox Fumble;
-    private JCheckBox Interception;
+    private JButton Run;
+    private JButton Submit;
+    private JTextField yardsToGo;
+    private JButton Penalty;
+    private JLabel Yards_to_Go;
+    private JButton Close_Poll;
+    private ArrayList<QuizIntake> UserList;
 
-    //comparing values
-    private byte play_type;
-    private byte yardage;
-    private boolean td;
-    private boolean fum;
-    private boolean intercept;
-    private boolean safe;
-    private boolean sk;
+    PlayType pt;
 
-    public QuizIntake(String title){
+    public GameMasterGUI(String title, ArrayList<QuizIntake> userList) {
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
-        play_type = 8;
-        yardage = 8;
-        td = false;
-        fum = false;
-        intercept = false;
-        safe = false;
-        sk = false;
-        PlayType pt = new PlayType(play_type,yardage,td,sk,intercept,fum,safe);
+        UserList=userList;
+        pt = new PlayType();
 
-        //playtype
+        Run.setEnabled(false);
+        Pass.setEnabled(false);
+        Sack.setEnabled(false);
+        Safety.setEnabled(false);
+        Interception.setEnabled(false);
+        Fumble.setEnabled(false);
+        Touchdown.setEnabled(false);
+        sixty.setEnabled(false);
+        forty_sixty.setEnabled(false);
+        twentyfive_forty.setEnabled(false);
+        zero_ten.setEnabled(false);
+        ten_twentyfive.setEnabled(false);
+        negative.setEnabled(false);
+        Kick_Punt.setEnabled(false);
+        Pass.setEnabled(false);
+        Run.setEnabled(false);
+        yardsToGo.setEnabled(true);
+
+        Close_Poll.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                /*if(yardsToGo.getText().length()<=0){
+
+                }*/
+                int ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
+                if(ytg > 0 && ytg < 100){
+                    Run.setEnabled(true);
+                    Pass.setEnabled(true);
+                    Sack.setEnabled(true);
+                    Safety.setEnabled(true);
+                    Interception.setEnabled(true);
+                    Fumble.setEnabled(true);
+                    Touchdown.setEnabled(true);
+                    sixty.setEnabled(true);
+                    forty_sixty.setEnabled(true);
+                    twentyfive_forty.setEnabled(true);
+                    zero_ten.setEnabled(true);
+                    ten_twentyfive.setEnabled(true);
+                    negative.setEnabled(true);
+                    Kick_Punt.setEnabled(true);
+                    Pass.setEnabled(true);
+                    Run.setEnabled(true);
+                    yardsToGo.setEnabled(false);
+                }
+            }
+        });
+
+        Submit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color c = new Color(62,62,62);
+                getPlayInfo();
+                Run.setEnabled(false);
+                Pass.setEnabled(false);
+                Sack.setEnabled(false);
+                Safety.setEnabled(false);
+                Interception.setEnabled(false);
+                Fumble.setEnabled(false);
+                Touchdown.setEnabled(false);
+                sixty.setEnabled(false);
+                forty_sixty.setEnabled(false);
+                twentyfive_forty.setEnabled(false);
+                zero_ten.setEnabled(false);
+                ten_twentyfive.setEnabled(false);
+                negative.setEnabled(false);
+                Kick_Punt.setEnabled(false);
+                Pass.setEnabled(false);
+                Run.setEnabled(false);
+                yardsToGo.setText("");
+                yardsToGo.setEnabled(true);
+                updateScore(UserList);
+                pt = new PlayType();
+                Run.setBackground(c);
+                Pass.setBackground(c);
+                Kick_Punt.setBackground(c);
+                negative.setBackground(c);
+                zero_ten.setBackground(c);
+                ten_twentyfive.setBackground(c);
+                twentyfive_forty.setBackground(c);
+                forty_sixty.setBackground(c);
+                sixty.setBackground(c);
+                Touchdown.setSelected(false);
+                Fumble.setSelected(false);
+                Safety.setSelected(false);
+                Interception.setSelected(false);
+                Sack.setSelected(false);
+
+            }
+        });
+
+
+
+        //play type
         Run.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -89,6 +178,68 @@ public class QuizIntake extends JFrame{
                 twentyfive_forty.setBackground(resetbkg);
                 forty_sixty.setBackground(resetbkg);
                 sixty.setBackground(resetbkg);
+            }
+        });
+
+        //special event
+        Touchdown.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Touchdown.isSelected()){
+                    pt.setTouchdown(true);
+                }
+                if(!Touchdown.isSelected()){
+                    pt.setTouchdown(false);
+                }
+                System.out.println("touchdown: " + pt.isTouchdown());
+            }
+        });
+        Fumble.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Fumble.isSelected()){
+                    pt.setFumble(true);
+                }
+                if(!Fumble.isSelected()){
+                    pt.setFumble(false);
+                }
+                System.out.println("fumble: " + pt.isFumble());
+            }
+        });
+        Interception.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Interception.isSelected()){
+                    pt.setInterception(true);
+                }
+                if(!Interception.isSelected()){
+                    pt.setInterception(false);
+                }
+                System.out.println("interception: " + pt.isInterception());
+            }
+        });
+        Safety.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Safety.isSelected()){
+                    pt.setSaftey(true);
+                }
+                if(!Safety.isSelected()){
+                    pt.setSaftey(false);
+                }
+                System.out.println("safety: " + pt.isSaftey());
+            }
+        });
+        Sack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Sack.isSelected()){
+                    pt.setSack(true);
+                }
+                if(!Sack.isSelected()){
+                    pt.setSack(false);
+                }
+                System.out.println("sack: " + pt.isSack());
             }
         });
 
@@ -195,76 +346,18 @@ public class QuizIntake extends JFrame{
                 }
             }
         });
-
-        //special events
-        Touchdown.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Touchdown.isSelected()){
-                    pt.setTouchdown(true);
-                }
-                if(!Touchdown.isSelected()){
-                    pt.setTouchdown(false);
-                }
-                System.out.println("predicted touchdown: " + pt.isTouchdown());
-            }
-        });
-        Fumble.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Fumble.isSelected()){
-                    pt.setFumble(true);
-                }
-                if(!Fumble.isSelected()){
-                    pt.setFumble(false);
-                }
-                System.out.println("predicted fumble: " + pt.isFumble());
-            }
-        });
-        Interception.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Interception.isSelected()){
-                    pt.setInterception(true);
-                }
-                if(!Interception.isSelected()){
-                    pt.setInterception(false);
-                }
-                System.out.println("predicted interception: " + pt.isInterception());
-            }
-        });
-        Safety.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Safety.isSelected()){
-                    pt.setSaftey(true);
-                }
-                if(!Safety.isSelected()){
-                    pt.setSaftey(false);
-                }
-                System.out.println("predicted safety: " + pt.isSaftey());
-            }
-        });
-        Sack.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Sack.isSelected()){
-                    pt.setSack(true);
-                }
-                if(!Sack.isSelected()){
-                    pt.setSack(false);
-                }
-                System.out.println("predicted sack: " + pt.isSack());
-            }
-        });
     }
-
     public static void main(String[] args){
-        JFrame frame = new QuizIntake("Virtual 12th Man");
+        JFrame frame = new GameMasterGUI("Game Master", new ArrayList<QuizIntake>());
         frame.setVisible(true);
     }
-
-    public Boolean getRun() {
-        return getRun().booleanValue();
+    private void updateScore(ArrayList<QuizIntake> uL){
+        for(QuizIntake i : uL){
+            //compare to GM play book
+            //update user score
+        }
+    }
+    public String getPlayInfo(){
+        return pt.toString() + (int)((Double.parseDouble(yardsToGo.getText())));
     }
 }
