@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class GameMasterGUI extends JFrame {
     private JPanel mainPanel;
@@ -30,6 +31,7 @@ public class GameMasterGUI extends JFrame {
     private JButton Penalty;
     private JLabel Yards_to_Go;
     private JButton Close_Poll;
+    private ArrayList<QuizIntake> UserList;
 
     PlayType pt;
 
@@ -41,11 +43,12 @@ public class GameMasterGUI extends JFrame {
     private boolean safe;
     private boolean sk;
 
-    public GameMasterGUI(String title) {
+    public GameMasterGUI(String title, ArrayList<QuizIntake> userList) {
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
+        UserList=userList;
 
         play_type = 8;
         yardage = 8;
@@ -337,10 +340,15 @@ public class GameMasterGUI extends JFrame {
         });
     }
     public static void main(String[] args){
-        JFrame frame = new GameMasterGUI("Game Master");
-        frame.setVisible(true);
+        //JFrame frame = new GameMasterGUI("Game Master");
+        //frame.setVisible(true);
     }
-
+    private void updateScore(ArrayList<QuizIntake> uL){
+        for(QuizIntake i : uL){
+            //compare to GM play book
+            //update user score
+        }
+    }
     public String getPlayInfo(){
         return pt.toString() + (int)((Double.parseDouble(yardsToGo.getText())));
     }
