@@ -66,7 +66,6 @@ public class GameMasterGUI extends JFrame {
                 /*if(yardsToGo.getText().length()<=0){
                     JOptionPane.showMessageDialog(frame,"Invalid Yards to go");
                 }*/
-                playStarted = true;
                 int ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
                 if(ytg > 0 && ytg < 100){
                     Run.setEnabled(true);
@@ -86,6 +85,7 @@ public class GameMasterGUI extends JFrame {
                     Pass.setEnabled(true);
                     Run.setEnabled(true);
                     yardsToGo.setEnabled(false);
+                    playStarted = true;
                 }
             }
         });
