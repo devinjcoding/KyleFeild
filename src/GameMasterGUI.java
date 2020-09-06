@@ -46,7 +46,7 @@ public class GameMasterGUI extends JFrame {
         pt = new PlayType();
         playStarted = false;
         gameEnd = false;
-
+        ytg = -1;
         Run.setEnabled(false);
         Pass.setEnabled(false);
         Sack.setEnabled(false);
@@ -68,11 +68,8 @@ public class GameMasterGUI extends JFrame {
         Close_Poll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*if(yardsToGo.getText().length()<=0){
-                    JOptionPane.showMessageDialog(frame,"Invalid Yards to go");
-                }*/
-                ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
-                if(ytg > 0 && ytg < 100){
+                validInput(yardsToGo.getText());
+                if(yardsToGo.getText().length() > 0 && ytg > 0 && ytg < 100){
                     Run.setEnabled(true);
                     Pass.setEnabled(true);
                     Sack.setEnabled(true);
@@ -152,7 +149,7 @@ public class GameMasterGUI extends JFrame {
                 Color c = new Color(60,0,0);
                 Color resetbkg = new Color(62,62,62);
                 pt.setPlayType((byte)(0));
-                System.out.println("play type: " + pt.getPlayType());
+                //System.out.println("play type: " + pt.getPlayType());
                 Run.setBackground(c);
                 Pass.setBackground(resetbkg);
                 Kick_Punt.setBackground(resetbkg);
@@ -164,7 +161,7 @@ public class GameMasterGUI extends JFrame {
                 Color c = new Color(60,0,0);
                 Color resetbkg = new Color(62,62,62);
                 pt.setPlayType((byte)(1));
-                System.out.println("play type: " + pt.getPlayType());
+                //System.out.println("play type: " + pt.getPlayType());
                 Run.setBackground(resetbkg);
                 Pass.setBackground(c);
                 Kick_Punt.setBackground(resetbkg);
@@ -177,8 +174,8 @@ public class GameMasterGUI extends JFrame {
                 Color resetbkg = new Color(62,62,62);
                 pt.setPlayType((byte)(2));
                 pt.setYardage((byte)(8));
-                System.out.println("play type: " + pt.getPlayType());
-                System.out.println("yardage: " + pt.getYardage());
+                //System.out.println("play type: " + pt.getPlayType());
+                //System.out.println("yardage: " + pt.getYardage());
                 Run.setBackground(resetbkg);
                 Pass.setBackground(resetbkg);
                 Kick_Punt.setBackground(c);
@@ -201,7 +198,7 @@ public class GameMasterGUI extends JFrame {
                 if(!Touchdown.isSelected()){
                     pt.setTouchdown(false);
                 }
-                System.out.println("touchdown: " + pt.isTouchdown());
+                //System.out.println("touchdown: " + pt.isTouchdown());
             }
         });
         Fumble.addActionListener(new ActionListener() {
@@ -213,7 +210,7 @@ public class GameMasterGUI extends JFrame {
                 if(!Fumble.isSelected()){
                     pt.setFumble(false);
                 }
-                System.out.println("fumble: " + pt.isFumble());
+                //System.out.println("fumble: " + pt.isFumble());
             }
         });
         Interception.addActionListener(new ActionListener() {
@@ -225,7 +222,7 @@ public class GameMasterGUI extends JFrame {
                 if(!Interception.isSelected()){
                     pt.setInterception(false);
                 }
-                System.out.println("interception: " + pt.isInterception());
+                //System.out.println("interception: " + pt.isInterception());
             }
         });
         Safety.addActionListener(new ActionListener() {
@@ -237,7 +234,7 @@ public class GameMasterGUI extends JFrame {
                 if(!Safety.isSelected()){
                     pt.setSaftey(false);
                 }
-                System.out.println("safety: " + pt.isSaftey());
+                //System.out.println("safety: " + pt.isSaftey());
             }
         });
         Sack.addActionListener(new ActionListener() {
@@ -249,7 +246,7 @@ public class GameMasterGUI extends JFrame {
                 if(!Sack.isSelected()){
                     pt.setSack(false);
                 }
-                System.out.println("sack: " + pt.isSack());
+                //System.out.println("sack: " + pt.isSack());
             }
         });
 
@@ -261,7 +258,7 @@ public class GameMasterGUI extends JFrame {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
                     pt.setYardage((byte)(0));
-                    System.out.println("yardage: " + pt.getYardage());
+                    //System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(c);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(resetbkg);
@@ -278,7 +275,7 @@ public class GameMasterGUI extends JFrame {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
                     pt.setYardage((byte)(1));
-                    System.out.println("yardage: " + pt.getYardage());
+                    //System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(c);
                     ten_twentyfive.setBackground(resetbkg);
@@ -295,7 +292,7 @@ public class GameMasterGUI extends JFrame {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
                     pt.setYardage((byte)(2));
-                    System.out.println("yardage: " + pt.getYardage());
+                    //System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(c);
@@ -312,7 +309,7 @@ public class GameMasterGUI extends JFrame {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
                     pt.setYardage((byte)(3));
-                    System.out.println("yardage: " + pt.getYardage());
+                    //System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(resetbkg);
@@ -329,7 +326,7 @@ public class GameMasterGUI extends JFrame {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
                     pt.setYardage((byte)(4));
-                    System.out.println("yardage: " + pt.getYardage());
+                    //System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(resetbkg);
@@ -346,7 +343,7 @@ public class GameMasterGUI extends JFrame {
                     Color c = new Color(60, 0, 0);
                     Color resetbkg = new Color(62, 62, 62);
                     pt.setYardage((byte)(5));
-                    System.out.println("yardage: " + pt.getYardage());
+                    //System.out.println("yardage: " + pt.getYardage());
                     negative.setBackground(resetbkg);
                     zero_ten.setBackground(resetbkg);
                     ten_twentyfive.setBackground(resetbkg);
@@ -532,5 +529,27 @@ public class GameMasterGUI extends JFrame {
             }
             u.setScore(score);
         }
+    }
+    private boolean validInput(String s){
+        try {
+                if (yardsToGo.getText().length() == 0) {
+                    Exception er = new Exception();
+                    System.out.println("First if");
+                    throw er;
+                }
+            ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
+            System.out.println("Double");
+            if (ytg > 100 || ytg < 0) {
+                Exception er = new Exception();
+                System.out.println("Second if");
+                throw er;
+            }
+        } catch (Exception er) {
+            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), "Invalid Yards to Go");
+            System.out.println("I caught the Error");
+            yardsToGo.setText("");
+        }
+        
+        return true;
     }
 }
