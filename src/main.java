@@ -14,8 +14,8 @@ public class main {
         pLog.add(one);
         gM.setVisible(false);
         user1Quiz.setVisible(false);
-        LeaderBoard lb = new LeaderBoard(pLog);
-        lb.initUI();
+        //LeaderBoard lb = new LeaderBoard(pLog);
+        //lb.initUI();
         System.out.println("Finish");
         //user1Quiz.
        /* while(true){
