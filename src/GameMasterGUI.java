@@ -389,6 +389,8 @@ public class GameMasterGUI extends JFrame {
             //compare to GM play book
             //update user score
             int score = u.getScore();
+            int failcount = 0;
+            boolean correct = false;
             if (userPlay == pt.getPlayType())
                 score += 10;
             if (ytg > 60){
@@ -526,6 +528,87 @@ public class GameMasterGUI extends JFrame {
                             score += 10;
                     }
                 }
+            }
+            if (ytg > 10 && ytg <= 25){
+                if (userYard == pt.getYardage()){
+                    if (userYard == 0)
+                        score += 10;
+                    if (userYard == 1)
+                        score += 5;
+                    if (userYard == 2)
+                        score += 10;
+                }
+            }
+            if (ytg <= 10){
+                if (userYard == pt.getYardage()){
+                    if (userYard == 0)
+                        score += 5;
+                    if (userYard == 1)
+                        score += 5;
+                }
+            }
+
+            if (userTouchdown){
+                if (pt.touchdown){
+                    score += 75;
+                    correct = true;
+                }
+                else{
+                    score -= 50;
+                    failcount++;
+                }
+            }
+            if (userFumble){
+                if (pt.fumble){
+                    score += 50;
+                    correct = true;
+                }
+                else{
+                    score -= 30;
+                    failcount++;
+                }
+            }
+            if (userInterception){
+                if (pt.interception){
+                    score += 50;
+                    correct = true;
+                }
+                else{
+                    score -= 30;
+                    failcount++;
+                }
+            }
+            if (userSack){
+                if (pt.sack){
+                    score += 25;
+                    correct = true;
+                }
+                else{
+                    score -= 15;
+                    failcount++;
+                }
+            }
+            if (userSafety){
+                if (pt.saftey){
+                    score += 25;
+                    correct = true;
+                }
+                else{
+                    score -= 15;
+                    failcount++;
+                }
+            }
+            if (failcount >= 5){
+                score -= 50;
+                failcount = 0;
+            }
+
+            if (userPlay == pt.getPlayType() && userYard == pt.getYardage()){
+                score += 25;
+            }
+            if (userPlay == pt.getPlayType() && userYard == pt.getYardage() && correct == true){
+                score += 25;
+                correct  = false;
             }
             u.setScore(score);
         }
