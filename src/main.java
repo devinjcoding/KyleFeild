@@ -14,7 +14,7 @@ public class main {
         pLog.add(one);
         gM.setVisible(false);
         user1Quiz.setVisible(false);
-        
+        LeaderBoardGUI lb = new LeaderBoardGUI("Leaderboard", pLog,one); //For more people change this user call
         System.out.println("Finish");
         //TODO Rank USERS
     }
