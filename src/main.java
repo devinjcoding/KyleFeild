@@ -1,11 +1,10 @@
 import java.io.FileNotFoundException;
 import java.util.HashMap;
-import java.util.Map;
 
 public class main {
     public static void main(String[] args) throws FileNotFoundException {
         //TODO add new user class
-        Map<Integer, PlayType> pLog = new HashMap<>();
+        HashMap<Integer, PlayType> pLog = new HashMap<>();
         GameMasterGUI frame = new GameMasterGUI("Game Master", pLog);
         QuizIntake user1Quiz = new QuizIntake("Virtual 12th Man",frame.isPlayStarted());
         User one = new User(1,0);
