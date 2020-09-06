@@ -31,8 +31,10 @@ public class GameMasterGUI extends JFrame {
     private JButton Penalty;
     private JLabel Yards_to_Go;
     private JButton Close_Poll;
+    private JButton End_Game;
     private boolean playStarted;
     private int ytg;
+    private boolean gameEnd;
 
     PlayType pt;
 
@@ -43,6 +45,7 @@ public class GameMasterGUI extends JFrame {
         this.pack();
         pt = new PlayType();
         playStarted = false;
+        gameEnd = false;
 
         Run.setEnabled(false);
         Pass.setEnabled(false);
@@ -96,7 +99,7 @@ public class GameMasterGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Color c = new Color(62,62,62);
-                getPlayInfo();
+                //disabling all GameMaster Buttons
                 Run.setEnabled(false);
                 Pass.setEnabled(false);
                 Sack.setEnabled(false);
@@ -113,10 +116,13 @@ public class GameMasterGUI extends JFrame {
                 Kick_Punt.setEnabled(false);
                 Pass.setEnabled(false);
                 Run.setEnabled(false);
+                //Resetting Yards to go Textbox
                 yardsToGo.setText("");
                 yardsToGo.setEnabled(true);
+                //updating score
                 updateScore(pLog);
                 pt = new PlayType();
+                //resetting button bkgs
                 Run.setBackground(c);
                 Pass.setBackground(c);
                 Kick_Punt.setBackground(c);
@@ -132,6 +138,7 @@ public class GameMasterGUI extends JFrame {
                 Interception.setSelected(false);
                 Sack.setSelected(false);
                 playStarted = false;
+                //open poll for QuizIntake
 
             }
         });
@@ -349,6 +356,12 @@ public class GameMasterGUI extends JFrame {
                 }
             }
         });
+        End_Game.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameEnd = true;
+            }
+        });
     }
     /*public static void main(String[] args){
         JFrame frame = new GameMasterGUI("Game Master", Map<Integer, PlayType>());
@@ -356,6 +369,9 @@ public class GameMasterGUI extends JFrame {
     }*/
     public boolean isPlayStarted(){
         return playStarted;
+    }
+    public boolean isGameEnd(){
+        return gameEnd;
     }
     private void updateScore(ArrayList<User> playerLog){
         for(User u: playerLog){
@@ -448,8 +464,5 @@ public class GameMasterGUI extends JFrame {
             }
             u.setScore(score);
         }
-    }
-    public String getPlayInfo(){
-        return pt.toString() + (int)((Double.parseDouble(yardsToGo.getText())));
     }
 }

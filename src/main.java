@@ -11,6 +11,9 @@ public class main {
         gM.setVisible(true);
         user1Quiz.setVisible(true);
         pLog.add(one);
+        gM.setVisible(false);
+        user1Quiz.setVisible(false);
+        System.out.println("Finish");
         //user1Quiz.
        /* while(true){
             if(gM.isPlayStarted()){
