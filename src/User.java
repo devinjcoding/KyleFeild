@@ -2,10 +2,10 @@ public class User {
     int ID=0;
     int score = 0;
     PlayType play;
-    public User(int id, int sc){
+    public User(int id, int sc, PlayType pt){
         ID =id;
         score = sc;
-        play = null;
+        play = pt;
     }
     public User(int id, int sc){
         ID =id;

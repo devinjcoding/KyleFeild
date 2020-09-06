@@ -391,6 +391,7 @@ public class GameMasterGUI extends JFrame {
             //compare to GM play book
             //update user score
             int score = u.getScore();
+            System.out.println(score);
             int failcount = 0;
             boolean correct = false;
             if (userPlay == pt.getPlayType())
