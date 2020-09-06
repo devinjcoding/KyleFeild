@@ -277,6 +277,30 @@ public class QuizIntake extends JFrame{
     public Boolean getRun() {
         return getRun().booleanValue();
     }
+    public void clearInfo(){
+        Color c = new Color(62, 62, 62);
+        pt.setSaftey(false);
+        pt.setInterception(false);
+        pt.setTouchdown(false);
+        pt.setSack(false);
+        pt.setFumble(false);
+        pt.setYardage((byte)8);
+        pt.setPlayType((byte)8);
+        negative.setBackground(c);
+        zero_ten.setBackground(c);
+        ten_twentyfive.setBackground(c);
+        twentyfive_forty.setBackground(c);
+        forty_sixty.setBackground(c);
+        sixty.setBackground(c);
+        Run.setBackground(c);
+        Pass.setBackground(c);
+        Kick_Punt.setBackground(c);
+        Touchdown.setSelected(false);
+        Fumble.setSelected(false);
+        Interception.setSelected(false);
+        Safety.setSelected(false);
+        Sack.setSelected(false);
+    }
     public void checkPlayStart(){
         if(playStarted == true){
             Run.setEnabled(false);
