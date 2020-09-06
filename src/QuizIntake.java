@@ -71,8 +71,8 @@ public class QuizIntake extends JFrame{
                     checkPlayStart();
                     count++;
                     count2 = 0;
+                    pt = new PlayType();
                 }
-                pt = new PlayType();
                 Run.setEnabled(true);
                 Pass.setEnabled(true);
                 Sack.setEnabled(true);
@@ -124,8 +124,8 @@ public class QuizIntake extends JFrame{
                         Color resetbkg = new Color(62, 62, 62);
                         pt.setPlayType((byte) (2));
                         pt.setYardage((byte) (8));
-                        //System.out.println("play type: " + pt.getPlayType());
-                        //System.out.println("yardage: " + pt.getYardage());
+                       // System.out.println("play type: " + pt.getPlayType());
+                       // System.out.println("yardage: " + pt.getYardage());
                         Run.setBackground(resetbkg);
                         Pass.setBackground(resetbkg);
                         Kick_Punt.setBackground(c);
@@ -313,7 +313,6 @@ public class QuizIntake extends JFrame{
                 checkPlayStart();
             }
         }
-        //
     }
     public void setPlayStarted(boolean ps){
         playStarted = ps;
@@ -390,5 +389,7 @@ public class QuizIntake extends JFrame{
     }
     private void setPlay_Type(){
         u.setPlayType(pt);
+        System.out.println("Setting Play Type");
+        System.out.println(pt);
     }
 }

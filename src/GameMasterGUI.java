@@ -388,6 +388,13 @@ public class GameMasterGUI extends JFrame {
             userSack = u.getPlay().isSack();
             userSafety = u.getPlay().isSaftey();
             userInterception = u.getPlay().isInterception();
+            System.out.println(userPlay);
+            System.out.println(userYard);
+            System.out.println(userTouchdown);
+            System.out.println(userFumble);
+            System.out.println(userSack);
+            System.out.println(userSafety);
+            System.out.println(userInterception);
             //compare to GM play book
             //update user score
             int score = u.getScore();
@@ -458,7 +465,7 @@ public class GameMasterGUI extends JFrame {
                     }
                 }
             }
-            if (ytg > 40 && ytg <= 60){
+            else if (ytg > 40 && ytg <= 60){
                 if (userYard == pt.getYardage()){
                     if (userYard == 0)
                         score += 15;
@@ -502,7 +509,7 @@ public class GameMasterGUI extends JFrame {
                     }
                 }
             }
-            if (ytg > 25 && ytg <= 40){
+            else if (ytg > 25 && ytg <= 40){
                 if (userYard == pt.getYardage()){
                     if (userYard == 0)
                         score += 10;
@@ -621,19 +628,15 @@ public class GameMasterGUI extends JFrame {
         try {
                 if (yardsToGo.getText().length() == 0) {
                     Exception er = new Exception();
-                    System.out.println("First if");
                     throw er;
                 }
             ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
-            System.out.println("Double");
             if (ytg > 100 || ytg < 0) {
                 Exception er = new Exception();
-                System.out.println("Second if");
                 throw er;
             }
         } catch (Exception er) {
             JOptionPane.showMessageDialog(JOptionPane.getRootFrame(), "Invalid Yards to Go");
-            System.out.println("I caught the Error");
             yardsToGo.setText("");
         }
 
