@@ -2,9 +2,10 @@ public class User {
     int ID=0;
     int score = 0;
     PlayType play;
-    public User(int id, int sc){
+    public User(int id, int sc,QuizIntake q){
         ID =id;
         score = sc;
+        play = q.getPlayType();
     }
 
     public int getID() {
@@ -22,5 +23,11 @@ public class User {
     public void setID(int ID) {
         this.ID = ID;
     }
+    public void setPlayType(PlayType pt){
+        play = pt;
+    }
 
+    public PlayType getPlay() {
+        return play;
+    }
 }
