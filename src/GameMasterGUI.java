@@ -42,6 +42,7 @@ public class GameMasterGUI extends JFrame {
         this.setContentPane(mainPanel);
         this.pack();
         pt = new PlayType();
+        playStarted = false;
 
         Run.setEnabled(false);
         Pass.setEnabled(false);

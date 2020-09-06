@@ -5,17 +5,18 @@ public class main {
     public static void main(String[] args) throws FileNotFoundException {
         //TODO add new user class
         ArrayList<User> pLog = new ArrayList<>();
-        GameMasterGUI frame = new GameMasterGUI("Game Master", pLog);
-        QuizIntake user1Quiz = new QuizIntake("Virtual 12th Man",frame.isPlayStarted());
+        GameMasterGUI gM = new GameMasterGUI("Game Master", pLog);
+        QuizIntake user1Quiz = new QuizIntake("Virtual 12th Man",gM);
         User one = new User(1,0,user1Quiz);
-        frame.setVisible(true);
+        gM.setVisible(true);
         user1Quiz.setVisible(true);
         pLog.add(one);
+        //user1Quiz.
        /* while(true){
-            if(frame.isPlayStarted()){
+            if(gM.isPlayStarted()){
                 user1Quiz.setVisible(false);
                 user1Quiz.clearInfo();
-            }else if(!frame.isPlayStarted()){
+            }else if(!gM.isPlayStarted()){
                 user1Quiz.setVisible(true);
                 one.setPlayType(user1Quiz.getPlayType());
             }
