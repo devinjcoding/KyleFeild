@@ -35,6 +35,7 @@ public class GameMasterGUI extends JFrame {
     private boolean playStarted;
     private int ytg;
     private boolean gameEnd;
+    private ArrayList<User> pLog;
 
     PlayType pt;
 
@@ -43,6 +44,7 @@ public class GameMasterGUI extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
+        this.pLog = pLog;
         pt = new PlayType();
         playStarted = false;
         gameEnd = false;
@@ -135,7 +137,6 @@ public class GameMasterGUI extends JFrame {
                 Interception.setSelected(false);
                 Sack.setSelected(false);
                 playStarted = false;
-                //open poll for QuizIntake
 
             }
         });
@@ -372,6 +373,7 @@ public class GameMasterGUI extends JFrame {
     }
     private void updateScore(ArrayList<User> playerLog){
         for(User u: playerLog){
+
             byte userPlay;
             byte userYard;
             boolean userTouchdown;
@@ -610,6 +612,7 @@ public class GameMasterGUI extends JFrame {
                 score += 25;
                 correct  = false;
             }
+            System.out.println(score);
             u.setScore(score);
         }
     }
@@ -634,5 +637,8 @@ public class GameMasterGUI extends JFrame {
         }
 
         return true;
+    }
+    public PlayType userPlayType(Integer i){
+       return pLog.get(i).getPlay();
     }
 }

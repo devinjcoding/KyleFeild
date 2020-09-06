@@ -2,10 +2,10 @@ public class User {
     int ID=0;
     int score = 0;
     PlayType play;
-    public User(int id, int sc,QuizIntake q){
+    public User(int id, int sc){
         ID =id;
         score = sc;
-        play = q.getPlayType();
+        play = null;
     }
 
     public int getID() {

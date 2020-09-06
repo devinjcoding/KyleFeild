@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class QuizIntake extends JFrame{
     private JPanel mainPanel;
@@ -22,15 +23,18 @@ public class QuizIntake extends JFrame{
     private JCheckBox Sack;
     private JCheckBox Fumble;
     private JCheckBox Interception;
+    private JTextArea Score;
+    private JPanel Score_Panel;
     public PlayType pt;
     private GameMasterGUI gM;
     private int count;
     private int count2;
     private int x;
+    private User u;
 
     private boolean playStarted;
 
-    public QuizIntake(String title, GameMasterGUI gM) {
+    public QuizIntake(String title, GameMasterGUI gM,User pLog) {
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
@@ -38,6 +42,7 @@ public class QuizIntake extends JFrame{
         this.gM = gM;
         count = 0;
         count2 = 0;
+        u=pLog;
         pt = new PlayType();
         Run.setEnabled(true);
         Pass.setEnabled(true);
@@ -57,6 +62,7 @@ public class QuizIntake extends JFrame{
         Run.setEnabled(true);
 
         while(!gM.isGameEnd()) {
+            Score.setText("Score: " + u.getScore());
             while (!gM.isGameEnd() && !gM.isPlayStarted() ) {
                 if (count == 0) {
                     clearInfo();
@@ -302,6 +308,7 @@ public class QuizIntake extends JFrame{
                     checkPlayStart();
                     count2++;
                     count = 0;
+                    setPlay_Type();
                 }
                 checkPlayStart();
             }
@@ -315,7 +322,7 @@ public class QuizIntake extends JFrame{
         return playStarted;
     }
     public PlayType getPlayType(){
-        return new PlayType();
+        return pt;
     }
     public Boolean getRun() {
         return getRun().booleanValue();
@@ -380,5 +387,8 @@ public class QuizIntake extends JFrame{
             Pass.setEnabled(true);
             Run.setEnabled(true);
         }
+    }
+    private void setPlay_Type(){
+        u.setPlayType(pt);
     }
 }
