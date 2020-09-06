@@ -27,7 +27,7 @@
             </constraints>
             <properties>
               <background color="-5789785"/>
-              <font name="Bodoni MT" size="20" style="1"/>
+              <font name="Bodoni MT" size="48" style="1"/>
               <foreground color="-11534336"/>
               <text value="Label"/>
             </properties>
@@ -73,7 +73,7 @@
             </constraints>
             <properties>
               <background color="-12698050"/>
-              <font name="Bodoni MT" size="20" style="1"/>
+              <font name="Bodoni MT" size="48" style="1"/>
               <foreground color="-5620"/>
               <text value="1"/>
             </properties>
@@ -119,7 +119,7 @@
             </constraints>
             <properties>
               <background color="-12698050"/>
-              <font name="Bodoni MT" size="20" style="1"/>
+              <font name="Bodoni MT" size="48" style="1"/>
               <foreground color="-5620"/>
               <text value="5"/>
             </properties>
@@ -165,7 +165,7 @@
             </constraints>
             <properties>
               <background color="-12698050"/>
-              <font name="Bodoni MT" size="20" style="1"/>
+              <font name="Bodoni MT" size="48" style="1"/>
               <foreground color="-5620"/>
               <text value="4"/>
             </properties>
@@ -211,7 +211,7 @@
             </constraints>
             <properties>
               <background color="-12698050"/>
-              <font name="Bodoni MT" size="20" style="1"/>
+              <font name="Bodoni MT" size="48" style="1"/>
               <foreground color="-5620"/>
               <text value="3"/>
             </properties>
@@ -257,7 +257,7 @@
             </constraints>
             <properties>
               <background color="-12698050"/>
-              <font name="Bodoni MT" size="20" style="1"/>
+              <font name="Bodoni MT" size="48" style="1"/>
               <foreground color="-5620"/>
               <text value="2"/>
             </properties>
