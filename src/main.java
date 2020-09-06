@@ -11,7 +11,7 @@ public class main {
         frame.setVisible(true);
         user1Quiz.setVisible(true);
         pLog.add(one);
-        while(true){
+       /* while(true){
             if(frame.isPlayStarted()){
                 user1Quiz.setVisible(false);
                 user1Quiz.clearInfo();
@@ -19,7 +19,7 @@ public class main {
                 user1Quiz.setVisible(true);
                 one.setPlayType(user1Quiz.getPlayType());
             }
-        }
+        }*/
         //TODO score all user class to GM
         //TODO award points to USER
         //TODO Rank USERS

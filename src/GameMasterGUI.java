@@ -32,6 +32,7 @@ public class GameMasterGUI extends JFrame {
     private JLabel Yards_to_Go;
     private JButton Close_Poll;
     private boolean playStarted;
+    private int ytg;
 
     PlayType pt;
 
@@ -66,7 +67,7 @@ public class GameMasterGUI extends JFrame {
                 /*if(yardsToGo.getText().length()<=0){
                     JOptionPane.showMessageDialog(frame,"Invalid Yards to go");
                 }*/
-                int ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
+                ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
                 if(ytg > 0 && ytg < 100){
                     Run.setEnabled(true);
                     Pass.setEnabled(true);
@@ -374,11 +375,12 @@ public class GameMasterGUI extends JFrame {
             userInterception = u.getPlay().isInterception();
             //compare to GM play book
             //update user score
+            int score = u.getScore();
             if (userPlay == pt.getPlayType())
                 score += 10;
             else
                 score -= 5;
-            if (yardsToGo > 60){
+            if ( ytg> 60){
                 if (userYard == pt.getYardage()){
                     if (userYard == 0)
                         score += 15;
@@ -394,6 +396,7 @@ public class GameMasterGUI extends JFrame {
                         score += 50;
                 }
             }
+            u.setScore(score);
         }
     }
     public String getPlayInfo(){
