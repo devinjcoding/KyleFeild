@@ -96,45 +96,132 @@ public class GameMasterGUI extends JFrame {
         Penalty.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Color c = new Color(62,62,62);
-                //disabling all GameMaster Buttons
-                Run.setEnabled(false);
-                Pass.setEnabled(false);
-                Sack.setEnabled(false);
-                Safety.setEnabled(false);
-                Interception.setEnabled(false);
-                Fumble.setEnabled(false);
-                Touchdown.setEnabled(false);
-                sixty.setEnabled(false);
-                forty_sixty.setEnabled(false);
-                twentyfive_forty.setEnabled(false);
-                zero_ten.setEnabled(false);
-                ten_twentyfive.setEnabled(false);
-                negative.setEnabled(false);
-                Kick_Punt.setEnabled(false);
-                Pass.setEnabled(false);
-                Run.setEnabled(false);
-                //Resetting Yards to go Textbox
-                yardsToGo.setText("");
-                yardsToGo.setEnabled(true);
-
-                pt = new PlayType();
-                //resetting button bkgs
-                Run.setBackground(c);
-                Pass.setBackground(c);
-                Kick_Punt.setBackground(c);
-                negative.setBackground(c);
-                zero_ten.setBackground(c);
-                ten_twentyfive.setBackground(c);
-                twentyfive_forty.setBackground(c);
-                forty_sixty.setBackground(c);
-                sixty.setBackground(c);
-                Touchdown.setSelected(false);
-                Fumble.setSelected(false);
-                Safety.setSelected(false);
-                Interception.setSelected(false);
-                Sack.setSelected(false);
-                playStarted = false;
+                int response = JOptionPane.showConfirmDialog(JOptionPane.getRootFrame(), "Has the penalty been accepted?", "Confirm Penalty", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if(response == JOptionPane.YES_OPTION) {
+                    System.out.println("Penalty Accepted");
+                    Color c = new Color(62,62,62);
+                    //disabling all GameMaster Buttons
+                    Run.setEnabled(false);
+                    Pass.setEnabled(false);
+                    Sack.setEnabled(false);
+                    Safety.setEnabled(false);
+                    Interception.setEnabled(false);
+                    Fumble.setEnabled(false);
+                    Touchdown.setEnabled(false);
+                    sixty.setEnabled(false);
+                    forty_sixty.setEnabled(false);
+                    twentyfive_forty.setEnabled(false);
+                    zero_ten.setEnabled(false);
+                    ten_twentyfive.setEnabled(false);
+                    negative.setEnabled(false);
+                    Kick_Punt.setEnabled(false);
+                    Pass.setEnabled(false);
+                    Run.setEnabled(false);
+                    //Resetting Yards to go Textbox
+                    yardsToGo.setText("");
+                    yardsToGo.setEnabled(true);
+                    pt = new PlayType();
+                    //resetting button bkgs
+                    Run.setBackground(c);
+                    Pass.setBackground(c);
+                    Kick_Punt.setBackground(c);
+                    negative.setBackground(c);
+                    zero_ten.setBackground(c);
+                    ten_twentyfive.setBackground(c);
+                    twentyfive_forty.setBackground(c);
+                    forty_sixty.setBackground(c);
+                    sixty.setBackground(c);
+                    Touchdown.setSelected(false);
+                    Fumble.setSelected(false);
+                    Safety.setSelected(false);
+                    Interception.setSelected(false);
+                    Sack.setSelected(false);
+                    playStarted = false;
+                }else if(response==JOptionPane.NO_OPTION){
+                    System.out.println("Penalty Denied");
+                    Color c = new Color(62,62,62);
+                    //disabling all GameMaster Buttons
+                    Run.setEnabled(false);
+                    Pass.setEnabled(false);
+                    Sack.setEnabled(false);
+                    Safety.setEnabled(false);
+                    Interception.setEnabled(false);
+                    Fumble.setEnabled(false);
+                    Touchdown.setEnabled(false);
+                    sixty.setEnabled(false);
+                    forty_sixty.setEnabled(false);
+                    twentyfive_forty.setEnabled(false);
+                    zero_ten.setEnabled(false);
+                    ten_twentyfive.setEnabled(false);
+                    negative.setEnabled(false);
+                    Kick_Punt.setEnabled(false);
+                    Pass.setEnabled(false);
+                    Run.setEnabled(false);
+                    //Resetting Yards to go Textbox
+                    yardsToGo.setText("");
+                    yardsToGo.setEnabled(true);
+                    //updating score
+                    updateScore(pLog);
+                    pt = new PlayType();
+                    //resetting button bkgs
+                    Run.setBackground(c);
+                    Pass.setBackground(c);
+                    Kick_Punt.setBackground(c);
+                    negative.setBackground(c);
+                    zero_ten.setBackground(c);
+                    ten_twentyfive.setBackground(c);
+                    twentyfive_forty.setBackground(c);
+                    forty_sixty.setBackground(c);
+                    sixty.setBackground(c);
+                    Touchdown.setSelected(false);
+                    Fumble.setSelected(false);
+                    Safety.setSelected(false);
+                    Interception.setSelected(false);
+                    Sack.setSelected(false);
+                    playStarted = false;
+                }else if(response == JOptionPane.CLOSED_OPTION){
+                    System.out.println("Penalty Denied");
+                    Color c = new Color(62,62,62);
+                    //disabling all GameMaster Buttons
+                    Run.setEnabled(false);
+                    Pass.setEnabled(false);
+                    Sack.setEnabled(false);
+                    Safety.setEnabled(false);
+                    Interception.setEnabled(false);
+                    Fumble.setEnabled(false);
+                    Touchdown.setEnabled(false);
+                    sixty.setEnabled(false);
+                    forty_sixty.setEnabled(false);
+                    twentyfive_forty.setEnabled(false);
+                    zero_ten.setEnabled(false);
+                    ten_twentyfive.setEnabled(false);
+                    negative.setEnabled(false);
+                    Kick_Punt.setEnabled(false);
+                    Pass.setEnabled(false);
+                    Run.setEnabled(false);
+                    //Resetting Yards to go Textbox
+                    yardsToGo.setText("");
+                    yardsToGo.setEnabled(true);
+                    //updating score
+                    updateScore(pLog);
+                    pt = new PlayType();
+                    //resetting button bkgs
+                    Run.setBackground(c);
+                    Pass.setBackground(c);
+                    Kick_Punt.setBackground(c);
+                    negative.setBackground(c);
+                    zero_ten.setBackground(c);
+                    ten_twentyfive.setBackground(c);
+                    twentyfive_forty.setBackground(c);
+                    forty_sixty.setBackground(c);
+                    sixty.setBackground(c);
+                    Touchdown.setSelected(false);
+                    Fumble.setSelected(false);
+                    Safety.setSelected(false);
+                    Interception.setSelected(false);
+                    Sack.setSelected(false);
+                    playStarted = false;
+                }
             }
         });
 
@@ -401,9 +488,21 @@ public class GameMasterGUI extends JFrame {
         End_Game.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameEnd = true;
+                int response = JOptionPane.showConfirmDialog(JOptionPane.getRootFrame(), "Are you sure you want to end the game?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if(response == JOptionPane.YES_OPTION) {
+                    System.out.println("Game Ended");
+                    gameEnd = true;
+                }else if(response==JOptionPane.NO_OPTION){
+                    System.out.println("Game continuing");
+                    gameEnd = false;
+                }else if(response == JOptionPane.CLOSED_OPTION){
+                    System.out.println("Game continuing");
+                    gameEnd = false;
+                }
             }
         });
+
+
 
     }
     /*public static void main(String[] args){
