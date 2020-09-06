@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="LeaderBoardGUI">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="424"/>
+    </constraints>
+    <properties>
+      <background color="-11534336"/>
+      <foreground color="-5789785"/>
+    </properties>
+    <border type="etched"/>
+    <children>
+      <grid id="f71df" binding="panel7" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5789785"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="3fa4f" class="javax.swing.JLabel" binding="yourPlace">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-5789785"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-11534336"/>
+              <text value="Label"/>
+            </properties>
+          </component>
+          <component id="849cc" class="javax.swing.JTextArea" binding="yourUserId">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-5789785"/>
+              <foreground color="-11534336"/>
+            </properties>
+          </component>
+          <component id="91061" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-5789785"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-11534336"/>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="3b094" binding="panel2" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12698050"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="44d93" class="javax.swing.JLabel" binding="one">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-5620"/>
+              <text value="1"/>
+            </properties>
+          </component>
+          <component id="5b55" class="javax.swing.JTextArea" binding="FirstPlace">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="3e4bb" class="javax.swing.JLabel" binding="scoreOne">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-1"/>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="ea433" binding="panel6" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12698050"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="9be52" class="javax.swing.JLabel" binding="five">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-5620"/>
+              <text value="5"/>
+            </properties>
+          </component>
+          <component id="f5b84" class="javax.swing.JTextArea" binding="FifthPlace">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="d494c" class="javax.swing.JLabel" binding="scoreFive">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-1"/>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="b3fe1" binding="panel5" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12698050"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="8c881" class="javax.swing.JLabel" binding="four">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-5620"/>
+              <text value="4"/>
+            </properties>
+          </component>
+          <component id="23ad9" class="javax.swing.JTextArea" binding="FourthPlace">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="fa41" class="javax.swing.JLabel" binding="scoreFour">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-1"/>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="ddf64" binding="panel4" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12698050"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="cdce0" class="javax.swing.JLabel" binding="three">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-5620"/>
+              <text value="3"/>
+            </properties>
+          </component>
+          <component id="ff82e" class="javax.swing.JTextArea" binding="ThirdPlace">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="8c719" class="javax.swing.JLabel" binding="scoreThree">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-1"/>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="8c83a" binding="panel3" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12698050"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="e2275" class="javax.swing.JLabel" binding="two">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-5620"/>
+              <text value="2"/>
+            </properties>
+          </component>
+          <component id="4b9f3" class="javax.swing.JTextArea" binding="SecondPlace">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="bf5f5" class="javax.swing.JLabel" binding="scoreTwo">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12698050"/>
+              <font name="Bodoni MT" size="20" style="1"/>
+              <foreground color="-1"/>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="b6aa" binding="panel1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5789785"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="99a8c" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-5789785"/>
+              <font name="Bodoni MT" size="48" style="1"/>
+              <foreground color="-11534336"/>
+              <text value="Leaderboard"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
