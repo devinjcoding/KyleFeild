@@ -1,4 +1,4 @@
-public class User {
+public class User{
     int ID=0;
     int score = 0;
     PlayType play;
