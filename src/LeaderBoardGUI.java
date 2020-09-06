@@ -28,6 +28,7 @@ public class LeaderBoardGUI extends JFrame{
     private JLabel scoreThree;
     private JLabel scoreFour;
     private JLabel scoreFive;
+    private JLabel youScore;
     private ArrayList<User> pLog;
 
     public LeaderBoardGUI(String title, ArrayList<User> userList,User u) {
@@ -49,6 +50,6 @@ public class LeaderBoardGUI extends JFrame{
         scoreFive.setText(String.valueOf(pLog.get(4).getScore()));
         yourPlace.setText(String.valueOf(pLog.indexOf(u)));
         yourUserId.setText("You");
-        
+        youScore.setText(String.valueOf(u.getScore()));
     }
 }
