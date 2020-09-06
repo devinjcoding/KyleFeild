@@ -40,6 +40,7 @@
             </constraints>
             <properties>
               <background color="-5789785"/>
+              <font name="Bodoni MT" size="20" style="1"/>
               <foreground color="-11534336"/>
             </properties>
           </component>

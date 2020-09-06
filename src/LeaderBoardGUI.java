@@ -38,6 +38,7 @@ public class LeaderBoardGUI extends JFrame{
         this.pack();
         pLog=userList;
         Collections.sort(pLog);
+        Collections.reverse(pLog);
         FirstPlace.setText("User ID: "+pLog.get(0).getID());
         scoreOne.setText(String.valueOf(pLog.get(0).getScore()));
         SecondPlace.setText("User ID: "+pLog.get(1).getID());
@@ -48,7 +49,7 @@ public class LeaderBoardGUI extends JFrame{
         scoreFour.setText(String.valueOf(pLog.get(3).getScore()));
         FifthPlace.setText("User ID: "+pLog.get(4).getID());
         scoreFive.setText(String.valueOf(pLog.get(4).getScore()));
-        yourPlace.setText(String.valueOf(pLog.indexOf(u)));
+        yourPlace.setText(String.valueOf(pLog.indexOf(u)+1));
         yourUserId.setText("You");
         youScore.setText(String.valueOf(u.getScore()));
     }
