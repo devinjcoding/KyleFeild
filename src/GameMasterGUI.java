@@ -93,6 +93,50 @@ public class GameMasterGUI extends JFrame {
                 }
             }
         });
+        Penalty.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color c = new Color(62,62,62);
+                //disabling all GameMaster Buttons
+                Run.setEnabled(false);
+                Pass.setEnabled(false);
+                Sack.setEnabled(false);
+                Safety.setEnabled(false);
+                Interception.setEnabled(false);
+                Fumble.setEnabled(false);
+                Touchdown.setEnabled(false);
+                sixty.setEnabled(false);
+                forty_sixty.setEnabled(false);
+                twentyfive_forty.setEnabled(false);
+                zero_ten.setEnabled(false);
+                ten_twentyfive.setEnabled(false);
+                negative.setEnabled(false);
+                Kick_Punt.setEnabled(false);
+                Pass.setEnabled(false);
+                Run.setEnabled(false);
+                //Resetting Yards to go Textbox
+                yardsToGo.setText("");
+                yardsToGo.setEnabled(true);
+                
+                pt = new PlayType();
+                //resetting button bkgs
+                Run.setBackground(c);
+                Pass.setBackground(c);
+                Kick_Punt.setBackground(c);
+                negative.setBackground(c);
+                zero_ten.setBackground(c);
+                ten_twentyfive.setBackground(c);
+                twentyfive_forty.setBackground(c);
+                forty_sixty.setBackground(c);
+                sixty.setBackground(c);
+                Touchdown.setSelected(false);
+                Fumble.setSelected(false);
+                Safety.setSelected(false);
+                Interception.setSelected(false);
+                Sack.setSelected(false);
+                playStarted = false;
+            }
+        });
 
         Submit.addActionListener(new ActionListener() {
             @Override
@@ -360,6 +404,7 @@ public class GameMasterGUI extends JFrame {
                 gameEnd = true;
             }
         });
+
     }
     /*public static void main(String[] args){
         JFrame frame = new GameMasterGUI("Game Master", Map<Integer, PlayType>());
