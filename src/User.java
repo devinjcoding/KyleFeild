@@ -1,4 +1,4 @@
-public class User{
+public class User implements Comparable<User>{
     int ID=0;
     int score = 0;
     PlayType play;
@@ -37,5 +37,10 @@ public class User{
     @Override
     public String toString() {
         return "ID=" + ID + "score=" + score;
+    }
+
+    @Override
+    public int compareTo(User u) {
+        return (score > u.getScore())? 1:-1;
     }
 }
