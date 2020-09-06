@@ -14,21 +14,8 @@ public class main {
         pLog.add(one);
         gM.setVisible(false);
         user1Quiz.setVisible(false);
-        LeaderBoardGUI lb = new LeaderBoardGUI(pLog);
-        lb.initUI();
+        
         System.out.println("Finish");
-        //user1Quiz.
-       /* while(true){
-            if(gM.isPlayStarted()){
-                user1Quiz.setVisible(false);
-                user1Quiz.clearInfo();
-            }else if(!gM.isPlayStarted()){
-                user1Quiz.setVisible(true);
-                one.setPlayType(user1Quiz.getPlayType());
-            }
-        }*/
-        //TODO score all user class to GM
-        //TODO award points to USER
         //TODO Rank USERS
     }
 
