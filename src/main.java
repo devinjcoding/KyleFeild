@@ -11,6 +11,7 @@ public class main {
         frame.setVisible(true);
         user1Quiz.setVisible(true);
         pLog.put(one.getID(),user1Quiz.getPlayType());
+        System.out.println(pLog);
         while(true){
             user1Quiz.setPlayStarted(frame.isPlayStarted());
         }
