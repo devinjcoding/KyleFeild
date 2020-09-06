@@ -24,6 +24,8 @@ public class QuizIntake extends JFrame{
     private JCheckBox Interception;
     public PlayType pt;
     private GameMasterGUI gM;
+    private int count;
+    private int count2;
 
     private boolean playStarted;
 
@@ -33,6 +35,8 @@ public class QuizIntake extends JFrame{
         this.setContentPane(mainPanel);
         this.pack();
         this.gM = gM;
+        count = 0;
+        count2 = 0;
         pt = new PlayType();
         Run.setEnabled(true);
         Pass.setEnabled(true);
@@ -52,9 +56,13 @@ public class QuizIntake extends JFrame{
         Run.setEnabled(true);
 
         while(!gM.isPlayStarted()) {
-            gM.setVisible(true);
-            this.setVisible(true);
-            checkPlayStart();
+            if (count == 0){
+                gM.setVisible(true);
+                this.setVisible(true);
+                checkPlayStart();
+                count++;
+                count2 = 0;
+            }
             //playtype
             Run.addActionListener(new ActionListener() {
                 @Override
@@ -270,7 +278,11 @@ public class QuizIntake extends JFrame{
             });
         }
         while(gM.isPlayStarted()){
-            checkPlayStart();
+            if (count2 == 0){
+                checkPlayStart();
+                count2++;
+                count = 0;
+            }
         }
     }
     public void setPlayStarted(boolean ps){

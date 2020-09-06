@@ -95,7 +95,6 @@ public class GameMasterGUI extends JFrame {
         Submit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 Color c = new Color(62,62,62);
                 getPlayInfo();
                 Run.setEnabled(false);
