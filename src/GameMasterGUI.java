@@ -380,7 +380,7 @@ public class GameMasterGUI extends JFrame {
                 score += 10;
             else
                 score -= 5;
-            if ( ytg> 60){
+            if ( ytg > 60){
                 if (userYard == pt.getYardage()){
                     if (userYard == 0)
                         score += 15;
@@ -394,6 +394,56 @@ public class GameMasterGUI extends JFrame {
                         score += 40;
                     if (userYard == 5)
                         score += 50;
+                }
+                else{
+                    if (pt.getYardage() == 0){
+                        if (userYard == 1)
+                            score -= 5;
+                        if (userYard == 2)
+                            score -= 5;
+                        if (userYard == 3)
+                            score -= 5;
+                        if (userYard == 4)
+                            score -= 5;
+                        if (userYard == 5)
+                            score -= 5;
+                    }
+                    if (pt.getYardage() == 1){
+                        if (userYard == 0)
+                            score -= 5;
+                        if (userYard == 2)
+                            score -= 5;
+                        if (userYard == 3)
+                            score -= 10;
+                        if (userYard == 4)
+                            score -= 15;
+                        if (userYard == 5)
+                            score -= 20;
+                    }
+                    if (pt.getYardage() == 2){
+                        if (userYard == 0)
+                            score -= 10;
+                        if (userYard == 1)
+                            score -= 5;
+                        if (userYard == 3)
+                            score -= 5;
+                        if (userYard == 4)
+                            score -= 10;
+                        if (userYard == 5)
+                            score -= 15;
+                    }
+                    if (pt.getYardage() == 3){
+                        if (userYard == 0)
+                            score -= 15;
+                        if (userYard == 1)
+                            score -= 10;
+                        if (userYard == 2)
+                            score -= 5;
+                        if (userYard == 4)
+                            score -= 5;
+                        if (userYard == 5)
+                            score -= 20;
+                    }
                 }
             }
             u.setScore(score);
