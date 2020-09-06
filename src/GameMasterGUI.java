@@ -65,6 +65,7 @@ public class GameMasterGUI extends JFrame {
         Kick_Punt.setEnabled(false);
         Pass.setEnabled(false);
         Run.setEnabled(false);
+        Submit.setEnabled(false);
         yardsToGo.setEnabled(true);
 
         Close_Poll.addActionListener(new ActionListener() {
@@ -88,6 +89,7 @@ public class GameMasterGUI extends JFrame {
                     Kick_Punt.setEnabled(true);
                     Pass.setEnabled(true);
                     Run.setEnabled(true);
+                    Submit.setEnabled(true);
                     yardsToGo.setEnabled(false);
                     playStarted = true;
                 }
@@ -117,6 +119,7 @@ public class GameMasterGUI extends JFrame {
                     Kick_Punt.setEnabled(false);
                     Pass.setEnabled(false);
                     Run.setEnabled(false);
+                    Submit.setEnabled(false);
                     //Resetting Yards to go Textbox
                     yardsToGo.setText("");
                     yardsToGo.setEnabled(true);
@@ -157,6 +160,7 @@ public class GameMasterGUI extends JFrame {
                     Kick_Punt.setEnabled(false);
                     Pass.setEnabled(false);
                     Run.setEnabled(false);
+                    Submit.setEnabled(false);
                     //Resetting Yards to go Textbox
                     yardsToGo.setText("");
                     yardsToGo.setEnabled(true);
@@ -199,6 +203,7 @@ public class GameMasterGUI extends JFrame {
                     Kick_Punt.setEnabled(false);
                     Pass.setEnabled(false);
                     Run.setEnabled(false);
+                    Submit.setEnabled(false);
                     //Resetting Yards to go Textbox
                     yardsToGo.setText("");
                     yardsToGo.setEnabled(true);
@@ -246,6 +251,7 @@ public class GameMasterGUI extends JFrame {
                 Kick_Punt.setEnabled(false);
                 Pass.setEnabled(false);
                 Run.setEnabled(false);
+                Submit.setEnabled(false);
                 //Resetting Yards to go Textbox
                 yardsToGo.setText("");
                 yardsToGo.setEnabled(true);

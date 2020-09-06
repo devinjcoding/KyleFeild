@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) throws FileNotFoundException {
         //TODO add new user class
-        Scanner file = new Scanner(new File("UserLog.txt"));
+        File f = new File("UserLog.txt");
+        Scanner file = new Scanner(f);
         ArrayList<User> pLog = new ArrayList<>();
         User one = new User(1,0);
         pLog.add(one);
@@ -23,7 +24,7 @@ public class main {
         }
         LeaderBoardGUI lb = new LeaderBoardGUI("Leaderboard", pLog,one); //For more people change this user call
         lb.setVisible(true);
-        lb.setSize(750,500);
+        lb.setSize(1000,750);
         System.out.println("Finish");
 
     }
