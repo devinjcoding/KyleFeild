@@ -374,7 +374,26 @@ public class GameMasterGUI extends JFrame {
             userInterception = u.getPlay().isInterception();
             //compare to GM play book
             //update user score
-
+            if (userPlay == pt.getPlayType())
+                score += 10;
+            else
+                score -= 5;
+            if (yardsToGo > 60){
+                if (userYard == pt.getYardage()){
+                    if (userYard == 0)
+                        score += 15;
+                    if (userYard == 1)
+                        score += 10;
+                    if (userYard == 2)
+                        score += 20;
+                    if (userYard == 3)
+                        score += 30;
+                    if (userYard == 4)
+                        score += 40;
+                    if (userYard == 5)
+                        score += 50;
+                }
+            }
         }
     }
     public String getPlayInfo(){
