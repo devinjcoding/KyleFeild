@@ -10,6 +10,7 @@ import java.awt.event.AdjustmentListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class LeaderBoardGUI implements AdjustmentListener {
@@ -20,6 +21,7 @@ public class LeaderBoardGUI implements AdjustmentListener {
 
     public LeaderBoardGUI(JScrollPane scrollPane, ArrayList<User> userLog)
     {
+        Collections.sort(userLog);
         pLog = userLog;
         Component view = scrollPane.getViewport().getView();
 
@@ -97,21 +99,18 @@ public class LeaderBoardGUI implements AdjustmentListener {
         }
     }
 
-    private static void createAndShowUI() throws FileNotFoundException {
+    private static void createAndShowUI(ArrayList<User> userLog){
+        Collections.sort(userLog);
+        //Component view = scrollPane.getViewport().getView();
         JPanel center = new JPanel( new GridLayout(1, 2) );
-        Scanner file = new Scanner(new File("UserLog.txt"));
-        ArrayList<String> leader = new ArrayList<>();
-        while(file.hasNextLine()){
-            leader.add(file.nextLine()+"\n");
-        }
         final JTextArea textArea = new JTextArea();
-        textArea.setText(String.valueOf(leader));
+        textArea.setText(String.valueOf(userLog));
         textArea.setEditable( false );
         center.add( createScrollPane( textArea ) );
         System.out.println(textArea.getInsets());
 
         final JTextPane textPane = new JTextPane();
-        textPane.setText(String.valueOf(leader));
+        textPane.setText(String.valueOf(userLog));
         textPane.setEditable( false );
         center.add( createScrollPane( textPane )  );
         textPane.setMargin( new Insets(5, 3, 7, 3) );
@@ -130,9 +129,9 @@ public class LeaderBoardGUI implements AdjustmentListener {
             {
                 try
                 {
-                    for (int i = 0; i < leader.size(); i++) {
-                        textArea.append(leader.get(i));
-                        textPane.getDocument().insertString(textPane.getDocument().getLength(),leader.get(i),null);
+                    for (int i = 0; i < userLog.size(); i++) {
+                        textArea.append(String.valueOf(userLog.get(i)));
+                        textPane.getDocument().insertString(textPane.getDocument().getLength(), String.valueOf(userLog.get(i)),null);
                     }
 
                 }
@@ -156,11 +155,7 @@ public class LeaderBoardGUI implements AdjustmentListener {
         {
             public void run()
             {
-                try {
-                    createAndShowUI();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                createAndShowUI();
             }
         });
     }
