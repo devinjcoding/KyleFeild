@@ -394,9 +394,7 @@ public class GameMasterGUI extends JFrame {
             int score = u.getScore();
             if (userPlay == pt.getPlayType())
                 score += 10;
-            else
-                score -= 5;
-            if ( ytg > 60){
+            if (ytg > 60){
                 if (userYard == pt.getYardage()){
                     if (userYard == 0)
                         score += 15;
@@ -412,53 +410,123 @@ public class GameMasterGUI extends JFrame {
                         score += 50;
                 }
                 else{
-                    if (pt.getYardage() == 0){
-                        if (userYard == 1)
-                            score -= 5;
-                        if (userYard == 2)
-                            score -= 5;
-                        if (userYard == 3)
-                            score -= 5;
-                        if (userYard == 4)
-                            score -= 5;
-                        if (userYard == 5)
-                            score -= 5;
-                    }
                     if (pt.getYardage() == 1){
-                        if (userYard == 0)
-                            score -= 5;
                         if (userYard == 2)
-                            score -= 5;
+                            score += 5;
                         if (userYard == 3)
                             score -= 10;
                         if (userYard == 4)
-                            score -= 15;
+                            score -= 20;
                         if (userYard == 5)
+                            score -= 25;
+                    }
+                    if (pt.getYardage() == 2){
+                        if (userYard == 1)
+                            score += 5;
+                        if (userYard == 3)
+                            score += 15;
+                        if (userYard == 4)
+                            score -= 10;
+                        if (userYard == 5)
+                            score -= 20;
+                    }
+                    if (pt.getYardage() == 3){
+                        if (userYard == 2)
+                            score += 10;
+                        if (userYard == 4)
+                            score += 20;
+                        if (userYard == 5)
+                            score -= 10;
+                    }
+                    if (pt.getYardage() == 4){
+                        if (userYard == 1)
+                            score -= 5;
+                        if (userYard == 3)
+                            score += 15;
+                        if (userYard == 5)
+                            score += 25;
+                    }
+                    if (pt.getYardage() == 5){
+                        if (userYard == 1)
+                            score -= 5;
+                        if (userYard == 2)
+                            score -= 10;
+                        if (userYard == 4)
+                            score += 20;
+                    }
+                }
+            }
+            if (ytg > 40 && ytg <= 60){
+                if (userYard == pt.getYardage()){
+                    if (userYard == 0)
+                        score += 15;
+                    if (userYard == 1)
+                        score += 10;
+                    if (userYard == 2)
+                        score += 15;
+                    if (userYard == 3)
+                        score += 25;
+                    if (userYard == 4)
+                        score += 35;
+                }
+                else{
+                    if (pt.getYardage() == 1){
+                        if (userYard == 2)
+                            score += 5;
+                        if (userYard == 3)
+                            score -= 10;
+                        if (userYard == 4)
                             score -= 20;
                     }
                     if (pt.getYardage() == 2){
-                        if (userYard == 0)
+                        if (userYard == 1)
+                            score += 5;
+                        if (userYard == 3)
+                            score += 10;
+                        if (userYard == 4)
                             score -= 10;
+                    }
+                    if (pt.getYardage() == 3){
+                        if (userYard == 2)
+                            score += 5;
+                        if (userYard == 4)
+                            score += 15;
+                    }
+                    if (pt.getYardage() == 4){
                         if (userYard == 1)
                             score -= 5;
                         if (userYard == 3)
+                            score += 15;
+                    }
+                }
+            }
+            if (ytg > 25 && ytg <= 40){
+                if (userYard == pt.getYardage()){
+                    if (userYard == 0)
+                        score += 10;
+                    if (userYard == 1)
+                        score += 10;
+                    if (userYard == 2)
+                        score += 15;
+                    if (userYard == 3)
+                        score += 20;
+                }
+                else{
+                    if (pt.getYardage() == 1){
+                        if (userYard == 2)
+                            score += 5;
+                        if (userYard == 3)
                             score -= 5;
-                        if (userYard == 4)
-                            score -= 10;
-                        if (userYard == 5)
-                            score -= 15;
+                    }
+                    if (pt.getYardage() == 2){
+                        if (userYard == 1)
+                            score += 5;
+                        if (userYard == 3)
+                            score += 10;
                     }
                     if (pt.getYardage() == 3){
-                        if (userYard == 0)
-                            score -= 15;
-                        if (userYard == 1)
-                            score -= 10;
                         if (userYard == 2)
-                            score -= 5;
-                        if (userYard == 4)
-                            score -= 5;
-                        if (userYard == 5)
-                            score -= 20;
+                            score += 10;
                     }
                 }
             }
