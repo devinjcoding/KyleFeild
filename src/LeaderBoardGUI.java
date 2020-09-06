@@ -27,6 +27,7 @@ public class LeaderBoardGUI extends JFrame{
     private JLabel scoreThree;
     private JLabel scoreFour;
     private JLabel scoreFive;
+    private JLabel youScore;
 
     public LeaderBoardGUI(String title) {
         super(title);
