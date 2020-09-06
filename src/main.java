@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) throws FileNotFoundException {
         //TODO add new user class
-        Scanner file = new Scanner(new File("C:\\Users\\aidan\\OneDrive\\Desktop\\KyleField\\KyleFeild\\src\\UserLog.txt"));
+        File userLog = new File("UserLog.txt");
+        Scanner file = new Scanner(userLog);
         ArrayList<User> pLog = new ArrayList<>();
         User one = new User(1,0);
         pLog.add(one);
