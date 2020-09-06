@@ -549,7 +549,7 @@ public class GameMasterGUI extends JFrame {
             System.out.println("I caught the Error");
             yardsToGo.setText("");
         }
-        
+
         return true;
     }
 }
