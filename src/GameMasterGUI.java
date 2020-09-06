@@ -117,7 +117,7 @@ public class GameMasterGUI extends JFrame {
                 //Resetting Yards to go Textbox
                 yardsToGo.setText("");
                 yardsToGo.setEnabled(true);
-                
+
                 pt = new PlayType();
                 //resetting button bkgs
                 Run.setBackground(c);

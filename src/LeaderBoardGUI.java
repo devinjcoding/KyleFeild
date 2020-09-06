@@ -17,6 +17,7 @@ public class LeaderBoardGUI implements AdjustmentListener {
     private JScrollBar scrollBar;
     private JTextComponent textComponent;
     private int previousExtent = -1;
+    private JPanel mainPanel;
 
     public LeaderBoardGUI(JScrollPane scrollPane, ArrayList<User> userLog)
     {
