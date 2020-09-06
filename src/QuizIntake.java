@@ -388,7 +388,7 @@ public class QuizIntake extends JFrame{
     }
     private void setPlay_Type(){
         u.setPlayType(pt);
-        System.out.println("Setting Play Type");
-        System.out.println(pt);
+        //System.out.println("Setting Play Type");
+        //System.out.println(pt);
     }
 }

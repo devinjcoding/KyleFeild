@@ -388,17 +388,17 @@ public class GameMasterGUI extends JFrame {
             userSack = u.getPlay().isSack();
             userSafety = u.getPlay().isSaftey();
             userInterception = u.getPlay().isInterception();
-            System.out.println(userPlay);
+            /*System.out.println(userPlay);
             System.out.println(userYard);
             System.out.println(userTouchdown);
             System.out.println(userFumble);
             System.out.println(userSack);
             System.out.println(userSafety);
-            System.out.println(userInterception);
+            System.out.println(userInterception);*/
             //compare to GM play book
             //update user score
             int score = u.getScore();
-            System.out.println(score);
+            //System.out.println(score);
             int failcount = 0;
             boolean correct = false;
             if (userPlay == pt.getPlayType())
@@ -620,7 +620,7 @@ public class GameMasterGUI extends JFrame {
                 score += 25;
                 correct  = false;
             }
-            System.out.println(score);
+            //System.out.println(score);
             u.setScore(score);
         }
     }
