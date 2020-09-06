@@ -64,7 +64,7 @@ public class GameMasterGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 /*if(yardsToGo.getText().length()<=0){
-
+                    JOptionPane.showMessageDialog(frame,"Invalid Yards to go");
                 }*/
                 int ytg = (int) ((Double.parseDouble(yardsToGo.getText())));
                 if(ytg > 0 && ytg < 100){
