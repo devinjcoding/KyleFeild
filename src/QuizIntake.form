@@ -124,7 +124,7 @@
               <background color="-12698050"/>
               <font name="MV Boli" size="16"/>
               <foreground color="-1"/>
-              <text value="Negative"/>
+              <text value="Negative/0 Yards"/>
             </properties>
           </component>
           <component id="646b5" class="javax.swing.JButton" binding="twentyfive_forty">
@@ -171,8 +171,8 @@
               <background color="-12698050"/>
               <font name="MV Boli" size="16"/>
               <foreground color="-1"/>
-              <label value="0-10 Yards"/>
-              <text value="0-10 Yards"/>
+              <label value="1-10 Yards"/>
+              <text value="1-10 Yards"/>
             </properties>
           </component>
           <component id="7a6a1" class="javax.swing.JButton" binding="sixty">

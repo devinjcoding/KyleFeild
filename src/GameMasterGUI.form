@@ -207,7 +207,7 @@
               <background color="-12698050"/>
               <font name="MV Boli" size="18"/>
               <foreground color="-1"/>
-              <text value="0-10 Yards"/>
+              <text value="1-10 Yards"/>
             </properties>
           </component>
           <component id="7a741" class="javax.swing.JButton" binding="ten_twentyfive">
@@ -229,7 +229,7 @@
               <background color="-12698050"/>
               <font name="MV Boli" size="18"/>
               <foreground color="-1"/>
-              <text value="Negative"/>
+              <text value="Negative/0 Yards"/>
             </properties>
           </component>
           <component id="6198a" class="javax.swing.JLabel" binding="Yardage">

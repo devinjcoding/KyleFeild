@@ -23,6 +23,7 @@ public class main {
         }
         LeaderBoardGUI lb = new LeaderBoardGUI("Leaderboard", pLog,one); //For more people change this user call
         lb.setVisible(true);
+        lb.setSize(750,500);
         System.out.println("Finish");
         //TODO Rank USERS
     }
