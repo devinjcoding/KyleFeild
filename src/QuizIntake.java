@@ -31,6 +31,7 @@ public class QuizIntake extends JFrame{
     private int count2;
     private int x;
     private User u;
+    private int randint;
 
     private boolean playStarted;
 
@@ -40,6 +41,7 @@ public class QuizIntake extends JFrame{
         this.setContentPane(mainPanel);
         this.pack();
         this.gM = gM;
+        randint = Integer.MIN_VALUE;
         count = 0;
         count2 = 0;
         u=pLog;
@@ -303,16 +305,13 @@ public class QuizIntake extends JFrame{
                     }
                 });
             }
-            while (gM.isPlayStarted()) {
-                if (count2 == 0) {
+                if(gM.isPlayStarted() && count2 == 0) {
                     checkPlayStart();
                     count2++;
                     count = 0;
                     setPlay_Type();
                 }
-                checkPlayStart();
             }
-        }
     }
     public void setPlayStarted(boolean ps){
         playStarted = ps;
