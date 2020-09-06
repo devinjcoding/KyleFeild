@@ -7,6 +7,10 @@ public class User {
         score = sc;
         play = q.getPlayType();
     }
+    public User(int id, int sc){
+        ID =id;
+        score = sc;
+    }
 
     public int getID() {
         return ID;
@@ -26,8 +30,12 @@ public class User {
     public void setPlayType(PlayType pt){
         play = pt;
     }
-
     public PlayType getPlay() {
         return play;
+    }
+
+    @Override
+    public String toString() {
+        return "ID=" + ID + "score=" + score;
     }
 }
